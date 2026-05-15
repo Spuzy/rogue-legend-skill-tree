@@ -28,7 +28,7 @@
 .node.theme-wizard .shape    { fill: var(--wizard); }
 .node.theme-fire .shape      { fill: #ff7a3a; }
 .node.theme-ice .shape       { fill: #7be5ff; }
-.node.theme-lightning .shape { fill: #ffe456; }
+.node.theme-lightning .shape { fill: #cc9e00; }
 .node.theme-poison .shape    { fill: #7adf6d; }
 .node.theme-crit .shape      { fill: #ff5e8a; }
 .node.theme-heals .shape     { fill: #a8ff9e; }
@@ -36,9 +36,9 @@
 .node.theme-dmgreduct .shape { fill: #7fffe6; }
 .node.theme-enraged .shape   { fill: #ff5050; }
 .node.theme-combo .shape     { fill: #ffb04a; }
-.node.theme-counter .shape   { fill: #6fe5c5; }
+.node.theme-counter .shape   { fill: #ac5a3b; }
 .node.theme-shuriken .shape  { fill: #c8c8d8; }
-.node.theme-status .shape    { fill: #d56fff; }
+.node.theme-status .shape    { fill: #aa5bca; }
 .node.theme-wound .shape     { fill: #d63a3a; }
 .node.theme-pet .shape       { fill: #d4a37a; }
 .node.theme-sentinel .shape  { fill: #b8b8c8; }

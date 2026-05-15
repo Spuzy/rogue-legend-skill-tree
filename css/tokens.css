@@ -14,12 +14,12 @@
   --accent-2: #c97cff;
   --book: #f0c060;
   --gem: #5fd0ff;
-  --atk: #ff8e3c;
-  --def: #5fb5ff;
-  --hp: #6dd76d;
-  --general: #ffd84a;
-  --warrior: #ff5e5e;
-  --wizard: #c97cff;
+  --atk: rgb(215, 112, 74);
+  --def: rgb(49, 124, 181);
+  --hp:  rgb(118, 152, 37);
+  --general: #cc9e00;
+  --warrior: #cb3a4f;
+  --wizard:  #276391;
   --locked: #4d4060;
   --maxed: #ffd84a;
   --plan: #ff5fdc;
