@@ -144,10 +144,11 @@
   font-size: 12px; font-weight: 700;
   display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap;
 }
-/* Action word ("New" / "Upgrade") + base word ("Skill"). */
-.skill-row .skill-action-base    { color: var(--text-dim); }
-.skill-row .skill-action-new     { color: #5ee08a; }       /* same green as !! */
-.skill-row .skill-action-upgrade { color: var(--accent-2); }/* same purple as {} */
+/* Action word ("New" / "Upgrade") + base word ("Skill") — coloured together. */
+.skill-row .skill-action-new,
+.skill-row .skill-action-new     ~ .skill-action-base { color: #5ee08a; }       /* green like !! */
+.skill-row .skill-action-upgrade,
+.skill-row .skill-action-upgrade ~ .skill-action-base { color: var(--accent-2); }/* purple like {} */
 /* Skill name uses the rarity colour. */
 .skill-row.r-common    .skill-name-text { color: rgb(204, 202, 233); }
 .skill-row.r-legendary .skill-name-text { color: rgb(255, 198,   0); }

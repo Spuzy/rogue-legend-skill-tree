@@ -16,7 +16,7 @@
           "type": "New Skill",
           "name": "Ninja Dodge",
           "rarity": "common",
-          "description": "Whenever you 'dodge', throw !2! | {3} 'Shurikens'",
+          "description": "Whenever you 'dodge', throw !2!/{3} 'Shurikens'",
           "icon_sprite_name": "Shadow_Dodge",
           "icon_file": "\\icons\\sharedassets0.assets__79274__1657.png"
         },
@@ -25,7 +25,7 @@
           "type": "Upgrade Skill",
           "name": "Shuriken Throw Lv. 2",
           "rarity": "common",
-          "description": "Every !2! rounds, throw !2! | {3} 'Shurikens'.",
+          "description": "Every !2! rounds, throw !2!/{3} 'Shurikens'.",
           "icon_sprite_name": "Shuriken",
           "icon_file": "\\icons\\sharedassets0.assets__79275__2068.png"
         },
@@ -58,7 +58,7 @@
           "type": "New Skill",
           "name": "Enhanced Combo",
           "rarity": "common",
-          "description": "Every 'Combo Attack' increases 'Crit Rate' by !+2%! | {+3%}, stacking up to !15! times.",
+          "description": "Every 'Combo Attack' increases 'Crit Rate' by !+2%!/{+3%}, stacking up to !15! times.",
           "icon_sprite_name": "Combo_Increase",
           "icon_file": "\\icons\\sharedassets0.assets__79106__1517.png"
         },
@@ -67,7 +67,7 @@
           "type": "Upgrade Skill",
           "name": "Combo Rate Up Lv. 2",
           "rarity": "common",
-          "description": "'Combo Rate' !+15%! | {+30%}",
+          "description": "'Combo Rate' !+15%!/{+30%}",
           "icon_sprite_name": "Combo_Chance",
           "icon_file": "\\icons\\sharedassets0.assets__79104__1716.png"
         },
@@ -76,7 +76,7 @@
           "type": "Upgrade Skill",
           "name": "Combo Mastery Lv. 2",
           "rarity": "legendary",
-          "description": "'Combo Rate' !+30%! | {+45%}, gain 'ATK' !+10%! | {+15%} on every 'Combo Attack', lasts until end of battle.",
+          "description": "'Combo Rate' !+30%!/{+45%}, gain 'ATK' !+10%!/{+15%} on every 'Combo Attack', lasts until end of battle.",
           "icon_sprite_name": "Combo_Mastery",
           "icon_file": "\\icons\\sharedassets0.assets__79103__1550.png"
         },
@@ -85,7 +85,7 @@
           "type": "New Skill",
           "name": "Follow-up Strike",
           "rarity": "legendary",
-          "description": "Every !4! | {3} 'Basic Attacks' or 'Combo Attacks', deliver an additional 'Combo Attack' that is guaranteed to 'critically strike'.",
+          "description": "Every !4!/{3} 'Basic Attacks' or 'Combo Attacks', deliver an additional 'Combo Attack' that is guaranteed to 'critically strike'.",
           "icon_sprite_name": "Follow-up_Strike",
           "icon_file": "\\icons\\sharedassets0.assets__79108__1603.png"
         }
@@ -100,7 +100,7 @@
           "type": "Upgrade Skill",
           "name": "Slow And Steady Lv. 2",
           "rarity": "common",
-          "description": "'Status Effects DMG' !+40%! | {+60%}",
+          "description": "'Status Effects DMG' !+40%!/{+60%}",
           "icon_sprite_name": "SlowButSteady",
           "icon_file": "\\icons\\sharedassets0.assets__79291__1705.png"
         },
@@ -109,7 +109,7 @@
           "type": "Upgrade Skill",
           "name": "Affliction Affection Lv. 2",
           "rarity": "common",
-          "description": "Deal !4%! | {8%} more damage for each unique 'Status Effect' on the enemy",
+          "description": "Deal !4%!/{8%} more damage for each unique 'Status Effect' on the enemy",
           "icon_sprite_name": "affliction_affection",
           "icon_file": "\\icons\\sharedassets0.assets__79290__2077.png"
         }
@@ -124,7 +124,7 @@
           "type": "New Skill",
           "name": "Enhanced Counter",
           "rarity": "common",
-          "description": "Every 'Counter Attack' increases 'Damage Reduction' by !+2%! | {+3%}, stacking up to !15! times.",
+          "description": "Every 'Counter Attack' increases 'Damage Reduction' by !+2%!/{+3%}, stacking up to !15! times.",
           "icon_sprite_name": "Counter_Attack_Increase",
           "icon_file": "\\icons\\sharedassets0.assets__79118__1854.png"
         },
@@ -133,7 +133,7 @@
           "type": "Upgrade Skill",
           "name": "Counter Rate Up Lv. 2",
           "rarity": "common",
-          "description": "'Counter Rate' !+15%! | {+30%}",
+          "description": "'Counter Rate' !+15%!/{+30%}",
           "icon_sprite_name": "Counter_Attack_Chance",
           "icon_file": "\\icons\\sharedassets0.assets__79116__1646.png"
         },
@@ -142,7 +142,7 @@
           "type": "Upgrade Skill",
           "name": "Counter Mastery Lv. 2",
           "rarity": "legendary",
-          "description": "'Counter Rate' !+30%! | {+45%}, gain 'DEF' !+10%! on every 'Counter Attack', lasts until end of battle.",
+          "description": "'Counter Rate' !+30%!/{+45%}, gain 'DEF' !+10%! on every 'Counter Attack', lasts until end of battle.",
           "icon_sprite_name": "Counter_Mastery",
           "icon_file": "\\icons\\sharedassets0.assets__79115__1847.png"
         },
@@ -166,7 +166,7 @@
           "type": "New Skill",
           "name": "Combo Bolt",
           "rarity": "common",
-          "description": "After every 'Combo Attack', cast !1! | {2} 'Bolt'",
+          "description": "After every 'Combo Attack', cast !1!/{2} 'Bolt'",
           "icon_sprite_name": "Combo_Bolt",
           "icon_file": "\\icons\\sharedassets0.assets__79222__1683.png"
         },
@@ -175,7 +175,7 @@
           "type": "Upgrade Skill",
           "name": "Lightning Weapon Lv. 2",
           "rarity": "common",
-          "description": "Your 'Weapon Attacks' deal additional 'lightning damage' and have a !75%! | {100%} chance to cast 'Bolt'.",
+          "description": "Your 'Weapon Attacks' deal additional 'lightning damage' and have a !75%!/{100%} chance to cast 'Bolt'.",
           "icon_sprite_name": "Lightning_Weapon",
           "icon_file": "\\icons\\sharedassets0.assets__79225__1677.png"
         },
@@ -184,7 +184,7 @@
           "type": "Upgrade Skill",
           "name": "Energizing Current Lv. 2",
           "rarity": "legendary",
-          "description": "Every 'Bolt' grants you !4! | {6} 'Ultimate Charge'",
+          "description": "Every 'Bolt' grants you !4!/{6} 'Ultimate Charge'",
           "icon_sprite_name": "EnergizingCurrent",
           "icon_file": "\\icons\\sharedassets0.assets__79224__1820.png"
         },
@@ -208,7 +208,7 @@
           "type": "New Skill",
           "name": "Flash Frost",
           "rarity": "common",
-          "description": "Every !2! | {1} turn, cast 'Icicle'. If you have a 'shield' active, cast 'Icicle' again.",
+          "description": "Every !2!/{1} turn, cast 'Icicle'. If you have a 'shield' active, cast 'Icicle' again.",
           "icon_sprite_name": "Flash_Frost",
           "icon_file": "\\icons\\sharedassets0.assets__79205__2113.png"
         },
@@ -217,7 +217,7 @@
           "type": "Upgrade Skill",
           "name": "Ice Weapon Lv. 2",
           "rarity": "common",
-          "description": "Your 'Weapon Attacks' deal additional 'ice damage' and have a !75%! | {100%} chance to cast 'Icicle'.",
+          "description": "Your 'Weapon Attacks' deal additional 'ice damage' and have a !75%!/{100%} chance to cast 'Icicle'.",
           "icon_sprite_name": "Ice_Weapon",
           "icon_file": "\\icons\\sharedassets0.assets__79208__1911.png"
         },
@@ -250,7 +250,7 @@
           "type": "New Skill",
           "name": "Ultimate Flame Strike",
           "rarity": "common",
-          "description": "After using your 'Ultimate', cast !1! | {2} 'Flame Strike'",
+          "description": "After using your 'Ultimate', cast !1!/{2} 'Flame Strike'",
           "icon_sprite_name": "Ultimate_Flame_Strike",
           "icon_file": "\\icons\\sharedassets0.assets__79165__1998.png"
         },
@@ -259,7 +259,7 @@
           "type": "Upgrade Skill",
           "name": "Fire Weapon Lv. 2",
           "rarity": "common",
-          "description": "Your 'Weapon Attacks' deal additional 'fire damage' and have a !60%! | {80%} to cast 'Fireball'.",
+          "description": "Your 'Weapon Attacks' deal additional 'fire damage' and have a !60%!/{80%} to cast 'Fireball'.",
           "icon_sprite_name": "Fire_Weapon",
           "icon_file": "\\icons\\sharedassets0.assets__79163__1681.png"
         },
@@ -292,7 +292,7 @@
           "type": "New Skill",
           "name": "Antidote",
           "rarity": "common",
-          "description": "Damage taken from 'Damage over Time' effects is reduced by !50%! | {{75%}}",
+          "description": "Damage taken from 'Damage over Time' effects is reduced by !50%!/{75%}",
           "icon_sprite_name": "Antidote",
           "icon_file": "\\icons\\sharedassets0.assets__79137__1676.png"
         },
@@ -301,7 +301,7 @@
           "type": "Upgrade Skill",
           "name": "Hardened Lv. 2",
           "rarity": "common",
-          "description": "'DMG Reduction' !+15%! | {+30%}",
+          "description": "'DMG Reduction' !+15%!/{+30%}",
           "icon_sprite_name": "Hardened",
           "icon_file": "\\icons\\sharedassets0.assets__79141__1923.png"
         },
@@ -310,7 +310,7 @@
           "type": "Upgrade Skill",
           "name": "Beefcake Lv. 2",
           "rarity": "legendary",
-          "description": "'Max HP' !+55%! | {+75%}, 'ATK' !-30%!",
+          "description": "'Max HP' !+55%!/{+75%}, 'ATK' !-30%!",
           "icon_sprite_name": "Beefcake",
           "icon_file": "\\icons\\sharedassets0.assets__79138__2002.png"
         },
@@ -358,7 +358,7 @@
           "type": "Upgrade Skill",
           "name": "Better With Friends Lv. 2",
           "rarity": "common",
-          "description": "'Pet DMG' !+40%! | {+75%}",
+          "description": "'Pet DMG' !+40%!/{+75%}",
           "icon_sprite_name": "BetterWithFriends",
           "icon_file": "\\icons\\sharedassets0.assets__79244__1427.png"
         }
@@ -373,7 +373,7 @@
           "type": "New Skill",
           "name": "Deep Cuts",
           "rarity": "common",
-          "description": "Whenever your 'Weapon Attack' critically strikes, apply !2! | {3} stacks of 'Wound'",
+          "description": "Whenever your 'Weapon Attack' critically strikes, apply !2!/{3} stacks of 'Wound'",
           "icon_sprite_name": "Deep_Cuts",
           "icon_file": "\\icons\\sharedassets0.assets__79303__2106.png"
         },
@@ -382,7 +382,7 @@
           "type": "Upgrade Skill",
           "name": "Wound Strike Lv. 2",
           "rarity": "common",
-          "description": "'Weapon Attacks' will apply !2! | {3} stacks of 'Wound'.",
+          "description": "'Weapon Attacks' will apply !2!/{3} stacks of 'Wound'.",
           "icon_sprite_name": "Wound_Strike",
           "icon_file": "\\icons\\sharedassets0.assets__79307__1759.png"
         },
@@ -391,7 +391,7 @@
           "type": "Upgrade Skill",
           "name": "Cleave Mastery Lv. 2",
           "rarity": "legendary",
-          "description": "'Cleave DMG' !+130%! | {+160%}, but ?no longer? applies 'Wound'.",
+          "description": "'Cleave DMG' !+130%!/{+160%}, but ?no longer? applies 'Wound'.",
           "icon_sprite_name": "Cleave_Mastery",
           "icon_file": "\\icons\\sharedassets0.assets__79302__2015.png"
         },
@@ -415,7 +415,7 @@
           "type": "New Skill",
           "name": "Toxic Retaliation",
           "rarity": "common",
-          "description": "Whenever you 'take damage' or use a 'Counter Attack', apply !1! | {2} stack of 'Poison' on the enemy",
+          "description": "Whenever you 'take damage' or use a 'Counter Attack', apply !1!/{2} stack of 'Poison' on the enemy",
           "icon_sprite_name": "Toxic_Retaliation",
           "icon_file": "\\icons\\sharedassets0.assets__79251__1617.png"
         },
@@ -424,7 +424,7 @@
           "type": "Upgrade Skill",
           "name": "Poison Strike Lv. 2",
           "rarity": "common",
-          "description": "'Weapon Attacks' will apply !2! | {3} stacks of 'Poison'.",
+          "description": "'Weapon Attacks' will apply !2!/{3} stacks of 'Poison'.",
           "icon_sprite_name": "Poison_Strike",
           "icon_file": "\\icons\\sharedassets0.assets__79250__1494.png"
         },
@@ -433,7 +433,7 @@
           "type": "Upgrade Skill",
           "name": "Outbreak Lv. 2",
           "rarity": "legendary",
-          "description": "At round !3!, apply 'Poison' !10! | {15} times on all enemies.",
+          "description": "At round !3!, apply 'Poison' !10!/{15} times on all enemies.",
           "icon_sprite_name": "Outbreak",
           "icon_file": "\\icons\\sharedassets0.assets__79249__1624.png"
         },
@@ -457,7 +457,7 @@
           "type": "New Skill",
           "name": "Steady Growth",
           "rarity": "common",
-          "description": "Every turn, your 'Current HP' and 'Max HP' increase by !+3%! | {+5%}, stacking infinitely.",
+          "description": "Every turn, your 'Current HP' and 'Max HP' increase by !+3%!/{+5%}, stacking infinitely.",
           "icon_sprite_name": "Steady_Growth",
           "icon_file": "\\icons\\sharedassets0.assets__79197__1873.png"
         },
@@ -466,7 +466,7 @@
           "type": "Upgrade Skill",
           "name": "Recovery Lv. 2",
           "rarity": "common",
-          "description": "You have a !50%! | {80%} chance to restore '5% HP' every turn.",
+          "description": "You have a !50%!/{80%} chance to restore '5% HP' every turn.",
           "icon_sprite_name": "Recovery",
           "icon_file": "\\icons\\sharedassets0.assets__79195__1894.png"
         },
@@ -475,7 +475,7 @@
           "type": "Upgrade Skill",
           "name": "Lifesteal Lv. 2",
           "rarity": "common",
-          "description": "'Weapon Attacks' have a !60%! | {80%} chance to 'Lifesteal'",
+          "description": "'Weapon Attacks' have a !60%!/{80%} chance to 'Lifesteal'",
           "icon_sprite_name": "Lifesteal",
           "icon_file": "\\icons\\sharedassets0.assets__79193__1855.png"
         },
@@ -499,7 +499,7 @@
           "type": "New Skill",
           "name": "Corrosion",
           "rarity": "common",
-          "description": "Deal !+1%! | {+2%} increased damage to enemies for each stack of 'Poison' on them",
+          "description": "Deal !+1%!/{+2%} increased damage to enemies for each stack of 'Poison' on them",
           "icon_sprite_name": "Corrosion",
           "icon_file": "\\icons\\sharedassets0.assets__79258__1691.png"
         },
@@ -508,7 +508,7 @@
           "type": "Upgrade Skill",
           "name": "Poison Cloud Lv. 2",
           "rarity": "common",
-          "description": "At the end of your turn, apply !2! | {3} stacks of 'Poison' to all enemies.",
+          "description": "At the end of your turn, apply !2!/{3} stacks of 'Poison' to all enemies.",
           "icon_sprite_name": "Poison_Cloud",
           "icon_file": "\\icons\\sharedassets0.assets__79259__1599.png"
         },
@@ -532,7 +532,7 @@
           "type": "New Skill",
           "name": "Enraged Durability",
           "rarity": "common",
-          "description": "When 'HP' !<40%!, 'DMG Reduction' !+30%! | {{+50%}}",
+          "description": "When 'HP' !<40%!, 'DMG Reduction' !+30%!/{+50%}",
           "icon_sprite_name": "Enraged Durability",
           "icon_file": "\\icons\\sharedassets0.assets__79149__1480.png"
         },
@@ -541,7 +541,7 @@
           "type": "Upgrade Skill",
           "name": "Enraged Strength Lv. 2",
           "rarity": "common",
-          "description": "When !HP <40%!, 'ATK' !+50%! | {+70%} and 'DEF' !+50%! | {+70%}",
+          "description": "When !HP <40%!, 'ATK' !+50%!/{+70%} and 'DEF' !+50%!/{+70%}",
           "icon_sprite_name": "Enraged_Strength",
           "icon_file": "\\icons\\sharedassets0.assets__79151__1552.png"
         },
@@ -550,7 +550,7 @@
           "type": "Upgrade Skill",
           "name": "Darkside Lv. 2",
           "rarity": "legendary",
-          "description": "When !HP >50%!, 'ATK' !+75%! | {+100%} but drain ?10%? of your 'HP' every turn.",
+          "description": "When !HP >50%!, 'ATK' !+75%!/{+100%} but drain ?10%? of your 'HP' every turn.",
           "icon_sprite_name": "Darkside",
           "icon_file": "\\icons\\sharedassets0.assets__79147__2042.png"
         },
@@ -583,7 +583,7 @@
           "type": "Upgrade Skill",
           "name": "Fragile Cold Lv. 2",
           "rarity": "common",
-          "description": "'Chill' increases damage you deal to the target by !8%! | {10%} per stack.",
+          "description": "'Chill' increases damage you deal to the target by !8%!/{10%} per stack.",
           "icon_sprite_name": "Fragile_Cold",
           "icon_file": "\\icons\\sharedassets0.assets__79216__1596.png"
         },
@@ -592,7 +592,7 @@
           "type": "Upgrade Skill",
           "name": "Freezing Cold Lv. 2",
           "rarity": "legendary",
-          "description": "When an enemy reaches max 'Chill' stacks, they become 'Frozen', and all 'Chill' stacks are consumed.\nDeal !20%! | {30%} increased damage to 'Frozen' enemies.",
+          "description": "When an enemy reaches max 'Chill' stacks, they become 'Frozen', and all 'Chill' stacks are consumed.\nDeal !20%!/{30%} increased damage to 'Frozen' enemies.",
           "icon_sprite_name": "Freezing_Cold",
           "icon_file": "\\icons\\sharedassets0.assets__79217__1536.png"
         },
@@ -625,7 +625,7 @@
           "type": "Upgrade Skill",
           "name": "Strike Shield Lv. 2",
           "rarity": "common",
-          "description": "'Weapon Attacks' have a !50%! | {75%} to grant a 'Shield'",
+          "description": "'Weapon Attacks' have a !50%!/{75%} to grant a 'Shield'",
           "icon_sprite_name": "Shield_Strike",
           "icon_file": "\\icons\\sharedassets0.assets__79269__1512.png"
         },
@@ -634,7 +634,7 @@
           "type": "Upgrade Skill",
           "name": "Exoplating Lv. 2",
           "rarity": "legendary",
-          "description": "At the start of combat, gain a 'Shield' equal to !70%! | {100%} of your Max HP, but 'Max HP' !-40%!",
+          "description": "At the start of combat, gain a 'Shield' equal to !70%!/{100%} of your Max HP, but 'Max HP' !-40%!",
           "icon_sprite_name": "Exoplating",
           "icon_file": "\\icons\\sharedassets0.assets__79264__1491.png"
         },
@@ -667,7 +667,7 @@
           "type": "Upgrade Skill",
           "name": "Live Wire Lv. 2",
           "rarity": "common",
-          "description": "When attacked by an enemy, cast !1-2! | {2-3} 'Bolts'.",
+          "description": "When attacked by an enemy, cast !1-2!/{2-3} 'Bolts'.",
           "icon_sprite_name": "LiveWire",
           "icon_file": "\\icons\\sharedassets0.assets__79237__1437.png"
         },
@@ -676,7 +676,7 @@
           "type": "Upgrade Skill",
           "name": "High Voltage Lv. 2",
           "rarity": "legendary",
-          "description": "Each 'Bolt' increases your 'Lightning DMG' by !+12%! | {+15%} for !2! turns.",
+          "description": "Each 'Bolt' increases your 'Lightning DMG' by !+12%!/{+15%} for !2! turns.",
           "icon_sprite_name": "High_Voltage",
           "icon_file": "\\icons\\sharedassets0.assets__79236__1958.png"
         },
@@ -700,7 +700,7 @@
           "type": "New Skill",
           "name": "A Warm Welcome",
           "rarity": "common",
-          "description": "At the start of combat, cast 'Fire Wave' !3! | {5} times",
+          "description": "At the start of combat, cast 'Fire Wave' !3!/{5} times",
           "icon_sprite_name": "A Warm Welcome_x3",
           "icon_file": "\\icons\\sharedassets0.assets__79169__2086.png"
         },
@@ -709,7 +709,7 @@
           "type": "Upgrade Skill",
           "name": "Pyromania Lv. 2",
           "rarity": "common",
-          "description": "Deal !25%! | {40%} more damage to 'burning' targets.",
+          "description": "Deal !25%!/{40%} more damage to 'burning' targets.",
           "icon_sprite_name": "Pyromania",
           "icon_file": "\\icons\\sharedassets0.assets__79176__1972.png"
         },
@@ -718,7 +718,7 @@
           "type": "Upgrade Skill",
           "name": "Firestarter Lv. 2",
           "rarity": "legendary",
-          "description": "After casting 'Fireball', you have a !75%! chance to cast 'Fire Wave' !2! | {3} times.",
+          "description": "After casting 'Fireball', you have a !75%! chance to cast 'Fire Wave' !2!/{3} times.",
           "icon_sprite_name": "Firestarter",
           "icon_file": "\\icons\\sharedassets0.assets__79175__1433.png"
         },
@@ -742,7 +742,7 @@
           "type": "New Skill",
           "name": "Critical Energy",
           "rarity": "legendary",
-          "description": "Everytime you land a 'critical hit', gain !+5! | {+8} 'Ultimate Charge'.",
+          "description": "Everytime you land a 'critical hit', gain !+5!/{+8} 'Ultimate Charge'.",
           "icon_sprite_name": "Critical_Energy",
           "icon_file": "\\icons\\sharedassets0.assets__79130__1418.png"
         },
@@ -751,7 +751,7 @@
           "type": "Upgrade Skill",
           "name": "Critical Hit Rate Up Lv. 2",
           "rarity": "common",
-          "description": "'Critical Hit Rate' !+15%! | {+25%}",
+          "description": "'Critical Hit Rate' !+15%!/{+25%}",
           "icon_sprite_name": "Crit_Chance",
           "icon_file": "\\icons\\sharedassets0.assets__79128__2100.png"
         },
@@ -760,7 +760,7 @@
           "type": "Upgrade Skill",
           "name": "Glass Cannon Lv. 2",
           "rarity": "legendary",
-          "description": "'ATK' !+55%! | {+75%}, 'Max HP' !-30%!",
+          "description": "'ATK' !+55%!/{+75%}, 'Max HP' !-30%!",
           "icon_sprite_name": "Glass_Cannon",
           "icon_file": "\\icons\\sharedassets0.assets__79131__1537.png"
         }
@@ -784,7 +784,7 @@
           "type": "Upgrade Skill",
           "name": "Opportunist Lv. 2",
           "rarity": "common",
-          "description": "Deal !+25%! | {+50%} 'increased DMG' to enemies afflicted with 'Wound'.",
+          "description": "Deal !+25%!/{+50%} 'increased DMG' to enemies afflicted with 'Wound'.",
           "icon_sprite_name": "Opportunist",
           "icon_file": "\\icons\\sharedassets0.assets__79314__2026.png"
         },
@@ -793,7 +793,7 @@
           "type": "Upgrade Skill",
           "name": "Licking Wounds Lv. 2",
           "rarity": "legendary",
-          "description": "After defeating an enemy, restore !3%! | {5%} of your 'HP'. Effectiveness increases for 'each stack' of 'Wound' the enemy had.",
+          "description": "After defeating an enemy, restore !3%!/{5%} of your 'HP'. Effectiveness increases for 'each stack' of 'Wound' the enemy had.",
           "icon_sprite_name": "Licking_Wounds",
           "icon_file": "\\icons\\sharedassets0.assets__79313__1556.png"
         },
@@ -817,7 +817,7 @@
           "type": "New Skill",
           "name": "Critical Throw",
           "rarity": "common",
-          "description": "Whenever your 'Weapon Attacks' critically strike, throw !1! | {2} 'Shurikens'",
+          "description": "Whenever your 'Weapon Attacks' critically strike, throw !1!/{2} 'Shurikens'",
           "icon_sprite_name": "Critical_Throw",
           "icon_file": "\\icons\\sharedassets0.assets__79280__1562.png"
         },
@@ -904,7 +904,7 @@
           "type": "New Skill",
           "name": "Warrior Lv. 2",
           "rarity": "legendary",
-          "description": "'Physical DMG' !+30%! | {+50%}, 'Weapon Attack DMG' !+30%! | {+50%}, 'Magical DMG' ?-30%? | {-50%}",
+          "description": "'Physical DMG' !+30%!/{+50%}, 'Weapon Attack DMG' !+30%!/{+50%}, 'Magical DMG' ?-30%? | {-50%}",
           "icon_sprite_name": "Warrior",
           "icon_file": "\\icons\\sharedassets0.assets__79296__1636.png"
         }
@@ -919,7 +919,7 @@
           "type": "New Skill",
           "name": "Wizard Lv. 2",
           "rarity": "legendary",
-          "description": "'Magical DMG' !+30%! | {+50%}, 'Skill DMG' !+30%! | {+50%}, 'Physical DMG' ?-30%? | {-50%}",
+          "description": "'Magical DMG' !+30%!/{+50%}, 'Skill DMG' !+30%!/{+50%}, 'Physical DMG' ?-30%? | {-50%}",
           "icon_sprite_name": "Wizard",
           "icon_file": "\\icons\\sharedassets0.assets__79299__1484.png"
         }
