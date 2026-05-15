@@ -125,6 +125,18 @@
   color: var(--text-dim);
 }
 .app-modal-help .tip b { color: var(--text); }
+/* Attention-grabbing notice pinned to the top of the help modal. */
+.app-modal-help .notice {
+  background: rgba(95, 208, 255, 0.12);
+  border: 1px solid var(--gem);
+  color: var(--text);
+  padding: 10px 12px;
+  margin: 0 0 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.app-modal-help .notice b { color: var(--gem); text-transform: uppercase; letter-spacing: 0.4px; }
 .app-modal-help .swatch-green   { color: #5ee08a; font-weight: 700; }
 .app-modal-help .swatch-purple  { color: var(--accent-2); font-weight: 700; }
 .app-modal-help .swatch-red     { color: #ce1c1b; font-weight: 700; }
