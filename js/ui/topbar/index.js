@@ -234,7 +234,7 @@ function openHelpModal() {
   const html = `
     <div class="app-modal-help">
       <div class="notice"><b>Heads up:</b> all gem costs shown here are already discounted by
-      the ad reward. If you don't watch ads, the real gem cost is roughly double what you see.</div>
+      the ad reward. If you don't have the ads pass, the real gem cost is roughly double what you see.</div>
 
       <p>The simulator helps you plan and track Adventure and Specialization skill-tree spending
       from the in-game Rogue Legend trees.</p>
