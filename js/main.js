@@ -55,6 +55,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     resetBtn:      $('reset-btn'),
     setPlannedBtn: $('set-planned-btn'),
     setFilteredBtn:$('set-filtered-btn'),
+    planFilteredBtn:$('plan-filtered-btn'),
     searchInput:   $('search-input'),
     searchClear:   $('search-clear'),
   });

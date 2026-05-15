@@ -2,7 +2,7 @@
 // budget filter, and cross-tree totals (ATK/DEF/HP %, total books spent).
 
 import { TREES } from '../../core/data.js';
-import { state, getCurrent, getPlanned, setCurrent, setFilter, setActiveTree, resetTree, setSearch } from '../../core/state.js';
+import { state, getCurrent, getPlanned, setCurrent, setPlanned, setFilter, setActiveTree, resetTree, setSearch } from '../../core/state.js';
 import { rangeCost, formatNumber, formatMinutes, maxAffordableLevel } from '../../core/cost.js';
 import { computeTotals } from '../../core/stats.js';
 import { confirmModal, infoModal } from '../modal.js';
@@ -126,6 +126,37 @@ export function initTopbar(opts) {
     });
   }
 
+  if (elements.planFilteredBtn) {
+    elements.planFilteredBtn.addEventListener('click', async () => {
+      const treeId = state.activeTree;
+      const tree = TREES[treeId];
+      if (!state.filter.active) return;
+      const books = state.filter.books || 0;
+      const gems  = state.filter.gems  || 0;
+      // Plan up to the highest level the budget allows starting from the
+      // current level. Skip nodes that are already planned at or above that.
+      const bumps = [];
+      for (const node of tree.nodes.values()) {
+        if (isLocked(tree, node)) continue;
+        const cur  = getCurrent(node.nodeId);
+        const plan = Math.max(getPlanned(node.nodeId) || 0, cur);
+        if (plan >= node.maxLevel) continue;
+        const target = maxAffordableLevel(node, cur, books, gems);
+        if (target > plan) bumps.push({ node, from: plan, to: target });
+      }
+      if (bumps.length === 0) return;
+      const ok = await confirmModal({
+        title: `Plan filtered in ${tree.label}`,
+        message: `Plan every unlocked node to the highest level its budget allows (${bumps.length} node${bumps.length === 1 ? '' : 's'}):`,
+        items: bumps.map(b => `${b.node.displayName}  (planned Lv.${b.from} \u2192 ${b.to})`),
+        confirmText: 'Plan filtered',
+        cancelText: 'Cancel',
+      });
+      if (!ok) return;
+      for (const b of bumps) setPlanned(b.node, b.to);
+    });
+  }
+
   if (elements.totalsExpand) {
     elements.totalsExpand.addEventListener('click', () => {
       totalsExpanded = !totalsExpanded;
@@ -184,6 +215,7 @@ export function renderTopbar() {
   elements.filterToggle.checked = !!state.filter.active;
   if (elements.filterAccumulative) elements.filterAccumulative.checked = state.filter.accumulative !== false;
   if (elements.setFilteredBtn) elements.setFilteredBtn.hidden = !state.filter.active;
+  if (elements.planFilteredBtn) elements.planFilteredBtn.hidden = !state.filter.active;
 
   // Cross-tree totals
   const totals = computeTotals();
@@ -238,8 +270,11 @@ function openHelpModal() {
         <kbd>On</kbd> &mdash; affordable next steps are highlighted.</li>
         <li>Keep <kbd>Accum.</kbd> on to highlight nodes whose total cost from your current level
         fits the budget. Switch it off to highlight any single level whose individual cost fits.</li>
-        <li><kbd>Set Filtered</kbd> appears while the filter is on &mdash; it promotes every
-        highlighted node in the active tree to the highest level its budget allows.</li>
+        <li><kbd>Set Filtered</kbd> appears next to the budget inputs while the filter is on
+        &mdash; it promotes every highlighted node in the active tree to the highest level its
+        budget allows.</li>
+        <li><kbd>Plan Filtered</kbd> does the same thing but as a <i>plan</i> instead of a
+        purchase, so you can preview the spend in the cost row without committing.</li>
       </ul>
 
       <div class="tip">

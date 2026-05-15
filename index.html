@@ -31,6 +31,10 @@
         <label class="toggle" title="Accumulative: highlight if the total cost from current level fits the budget. Off: highlight any single level whose own cost fits."><input type="checkbox" id="filter-accumulative" checked><span>Accum.</span></label>
         <label class="tb-num"><span class="ico ico-book"></span><input type="number" id="filter-books" min="0" step="100" placeholder="books"></label>
         <label class="tb-num"><span class="ico ico-gem"></span><input type="number" id="filter-gems" min="0" step="50" placeholder="gems"></label>
+        <div class="filter-actions">
+          <button id="set-filtered-btn" type="button" title="Set every unlocked node in the active tree to the highest level its budget allows" hidden>Set Filtered</button>
+          <button id="plan-filtered-btn" type="button" title="Plan every unlocked node in the active tree to the highest level its budget allows (does not spend)" hidden>Plan Filtered</button>
+        </div>
       </div>
     </div>
 
@@ -42,7 +46,6 @@
     </div>
     <button id="help-btn" class="help-btn" type="button" title="How to use the simulator" aria-label="Help">i</button>
     <div class="topbar-actions">
-      <button id="set-filtered-btn" title="Set every unlocked node in the active tree to the highest level its budget allows" hidden>Set Filtered</button>
       <button id="set-planned-btn" title="Promote every planned level in the active tree to current">Set Planned</button>
       <button id="reset-btn" class="danger" title="Clear all current levels and plans in the active tree (filter is preserved)">Reset</button>
     </div>

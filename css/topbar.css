@@ -55,8 +55,7 @@
   cursor: pointer; font-size: 13px;
 }
 #reset-btn:hover { background: #7a2840; }
-#set-planned-btn,
-#set-filtered-btn {
+#set-planned-btn {
   background: var(--bg-3);
   color: var(--text);
   border: 1px solid var(--border);
@@ -66,10 +65,29 @@
   font-size: 13px;
   cursor: pointer;
 }
-#set-planned-btn:hover,
-#set-filtered-btn:hover { background: var(--bg-2); border-color: var(--accent); color: var(--accent); }
-#set-filtered-btn { border-color: var(--plan); color: #ff9be8; }
-#set-filtered-btn:hover { border-color: var(--plan); color: var(--plan); }
+#set-planned-btn:hover { background: var(--bg-2); border-color: var(--accent); color: var(--accent); }
+
+/* Compact action buttons that live inside the budget filter card. */
+.filter-actions {
+  display: flex; gap: 6px; align-items: center;
+  margin-left: 4px;
+}
+.filter-actions button {
+  background: var(--bg-3);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.filter-actions button[hidden] { display: none; }
+#set-filtered-btn  { border-color: var(--accent); color: var(--accent); }
+#set-filtered-btn:hover  { background: var(--accent); color: var(--bg-0); }
+#plan-filtered-btn { border-color: var(--plan);   color: #ff9be8; }
+#plan-filtered-btn:hover { background: var(--plan); color: #fff; border-color: var(--plan); }
 
 /* Search bar (cyan outline matches the in-canvas node halo). */
 .topbar-search {
