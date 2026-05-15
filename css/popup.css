@@ -157,7 +157,7 @@
 .skill-row .skill-text { font-size: 11px; line-height: 1.4; color: var(--text); }
 .skill-row .skill-emph     { color: #5ee08a;          font-weight: 700; }
 .skill-row .skill-upgrade  { color: var(--accent-2);  font-weight: 700; }
-.skill-row .skill-drawback { color: #ff5a5a;          font-weight: 700; }
+.skill-row .skill-drawback { color: #ce1c1b;          font-weight: 700; }
 .skill-row .skill-keyword  { color: #5ec6ff;          font-weight: 700; }
 
 .popup-foot { padding: 10px 14px; border-top: 1px solid var(--border); display: flex; gap: 8px; flex-wrap: wrap; }

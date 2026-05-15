@@ -904,7 +904,7 @@
           "type": "New Skill",
           "name": "Warrior Lv. 2",
           "rarity": "legendary",
-          "description": "'Physical DMG' !+30%!/{+50%}, 'Weapon Attack DMG' !+30%!/{+50%}, 'Magical DMG' ?-30%? | {-50%}",
+          "description": "'Physical DMG' !+30%!/{+50%}, 'Weapon Attack DMG' !+30%!/{+50%}, 'Magical DMG' ?-30%? | ?-50%?",
           "icon_sprite_name": "Warrior",
           "icon_file": "\\icons\\sharedassets0.assets__79296__1636.png"
         }
@@ -919,7 +919,7 @@
           "type": "New Skill",
           "name": "Wizard Lv. 2",
           "rarity": "legendary",
-          "description": "'Magical DMG' !+30%!/{+50%}, 'Skill DMG' !+30%!/{+50%}, 'Physical DMG' ?-30%? | {-50%}",
+          "description": "'Magical DMG' !+30%!/{+50%}, 'Skill DMG' !+30%!/{+50%}, 'Physical DMG' ?-30%? | ?-50%?",
           "icon_sprite_name": "Wizard",
           "icon_file": "\\icons\\sharedassets0.assets__79299__1484.png"
         }

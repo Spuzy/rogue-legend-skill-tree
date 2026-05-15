@@ -127,6 +127,6 @@
 .app-modal-help .tip b { color: var(--text); }
 .app-modal-help .swatch-green   { color: #5ee08a; font-weight: 700; }
 .app-modal-help .swatch-purple  { color: var(--accent-2); font-weight: 700; }
-.app-modal-help .swatch-red     { color: #ff5a5a; font-weight: 700; }
+.app-modal-help .swatch-red     { color: #ce1c1b; font-weight: 700; }
 .app-modal-help .swatch-plan    { color: var(--plan); font-weight: 700; }
 .app-modal-help .swatch-search  { color: var(--search); font-weight: 700; }
