@@ -121,9 +121,13 @@
 
 /* ── Mobile sidebar ── */
 @media (max-width: 600px) {
-  #sidebar .side-card { padding: 8px 10px; }
-  .totals { gap: 3px; }
-  .total-row { padding: 4px 8px; font-size: 12px; }
+  #sidebar .side-card { padding: 6px 8px; }
+  .side-title { font-size: 9px; margin-bottom: 5px; }
+  .side-sub { font-size: 8px; }
+  .totals { gap: 2px; }
+  .total-row { padding: 3px 6px; font-size: 10px; }
+  .total-row .total-lbl { font-size: 9px; }
   .totals-detail { max-height: 40vh; }
-  .expand-btn { width: 28px; height: 28px; font-size: 14px; }
+  .expand-btn { width: 20px; height: 18px; font-size: 10px; }
+  .advanced-toggle { font-size: 8px; padding: 3px 0; margin-top: 4px; }
 }

@@ -22,6 +22,7 @@
 
 /* ── Mobile tabs ── */
 @media (max-width: 600px) {
-  #tabs { padding: 6px; gap: 4px; }
-  #tabs button { flex: 1; padding: 10px 12px; min-height: 44px; font-size: 13px; justify-content: center; }
+  #tabs { padding: 4px; gap: 3px; }
+  #tabs button { flex: 1; padding: 6px 8px; min-height: 32px; font-size: 11px; justify-content: center; }
+  .tab-ico { width: 14px; height: 14px; }
 }

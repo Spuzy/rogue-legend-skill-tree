@@ -185,16 +185,30 @@
     border-radius: 0;
     z-index: 50;
   }
-  .popup .close { font-size: 28px; padding: 4px 10px; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
-  .popup-head { padding: 10px; gap: 8px; }
-  .popup-proj { padding: 8px 10px; }
-  .lvl-table tbody td { padding: 8px 6px; }
-  .lvl-meta { flex-wrap: wrap; gap: 8px; }
-  .lvl-meta .lvl-actions { margin-left: 0; width: 100%; display: flex; gap: 6px; }
-  .lvl-meta .lvl-actions button { flex: 1; min-height: 44px; padding: 8px 6px; font-size: 12px; }
-  .lvl-table tbody tr:not(.lvl-row) .actions button { min-height: 44px; padding: 6px 12px; }
-  .popup-foot { padding: 8px 10px; }
-  .popup-foot button { flex: 1; min-height: 44px; padding: 8px 10px; font-size: 13px; }
-  .skill-row { grid-template-columns: 36px 1fr; gap: 8px; padding: 6px 8px; }
-  .skill-row .skill-icon { width: 36px; height: 36px; }
+  .popup .close { font-size: 20px; padding: 2px 8px; min-width: 32px; min-height: 32px; display: inline-flex; align-items: center; justify-content: center; }
+  .popup-head { padding: 6px 8px; gap: 6px; }
+  .popup-icon-wrap { width: 34px; height: 34px; }
+  .popup-icon { width: 34px; height: 34px; }
+  .popup-title .name { font-size: 13px; }
+  .popup-title .sub { font-size: 9px; gap: 5px; }
+  .popup-proj { padding: 5px 8px; }
+  .proj-label { font-size: 9px; margin-bottom: 2px; }
+  .proj-stats { font-size: 11px; gap: 8px; }
+  .lvl-table { font-size: 10px; }
+  .lvl-table thead th { padding: 4px 6px; font-size: 8px; }
+  .lvl-table tbody td { padding: 4px 6px; }
+  .lvl-table .lvl { font-size: 11px; width: 36px; }
+  /* Compact buff-node rows: smaller buttons */
+  .lvl-table tbody tr:not(.lvl-row) .actions button { min-height: 26px; padding: 2px 8px; font-size: 10px; }
+  /* Skill-node rows: slightly larger buttons */
+  .lvl-meta { flex-wrap: wrap; gap: 5px; font-size: 10px; }
+  .lvl-meta .lvl-actions { margin-left: 0; width: 100%; display: flex; gap: 4px; }
+  .lvl-meta .lvl-actions button { flex: 1; min-height: 30px; padding: 4px 4px; font-size: 10px; }
+  .popup-foot { padding: 5px 8px; }
+  .popup-foot button { flex: 1; min-height: 30px; padding: 5px 8px; font-size: 11px; }
+  .skill-row { grid-template-columns: 30px 1fr; gap: 6px; padding: 4px 6px; }
+  .skill-row .skill-icon { width: 30px; height: 30px; }
+  .skill-row .skill-name { font-size: 10px; }
+  .skill-row .skill-text { font-size: 9px; }
+  .skill-row .skill-lvl { font-size: 9px; }
 }
