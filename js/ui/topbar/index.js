@@ -260,6 +260,8 @@ function openHelpModal() {
         <li><span class="swatch-green">Green</span> numbers are the skill's base value.</li>
         <li><span class="swatch-purple">Purple</span> numbers are the upgraded "+" value some
         skills can roll into mid-run.</li>
+        <li><span class="swatch-red">Red</span> text marks the drawback / trade-off clause of a
+        skill (e.g. "no longer applies Wound").</li>
         <li>The skill name is tinted by its rarity (common, legendary, mythic) and the
         "New / Upgrade Skill" label matches the action colour.</li>
       </ul>
