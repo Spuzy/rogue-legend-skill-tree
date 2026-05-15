@@ -141,15 +141,21 @@
 .skill-row .skill-icon img { width: 100%; height: 100%; object-fit: contain; }
 .skill-row .skill-info { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .skill-row .skill-name {
-  font-size: 12px; font-weight: 700; color: var(--accent-2);
+  font-size: 12px; font-weight: 700;
   display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap;
 }
-.skill-row .skill-type { color: #a8b3ff; }
-.skill-row.r-legendary .skill-type { color: #ffcc66; }
-.skill-row.r-mythic    .skill-type { color: #ff8aa0; }
+/* Action word ("New" / "Upgrade") + base word ("Skill"). */
+.skill-row .skill-action-base    { color: var(--text-dim); }
+.skill-row .skill-action-new     { color: #5ee08a; }       /* same green as !! */
+.skill-row .skill-action-upgrade { color: var(--accent-2); }/* same purple as {} */
+/* Skill name uses the rarity colour. */
+.skill-row.r-common    .skill-name-text { color: rgb(204, 202, 233); }
+.skill-row.r-legendary .skill-name-text { color: rgb(255, 198,   0); }
+.skill-row.r-mythic    .skill-name-text { color: rgb(254,  72,  99); }
 .skill-row .skill-lvl  { margin-left: auto; color: var(--text-dim); font-size: 11px; font-weight: 600; }
 .skill-row .skill-text { font-size: 11px; line-height: 1.4; color: var(--text); }
-.skill-row .skill-emph { color: #5ee08a; font-weight: 700; }
+.skill-row .skill-emph    { color: #5ee08a; font-weight: 700; }
+.skill-row .skill-upgrade { color: var(--accent-2); font-weight: 700; }
 .skill-row .skill-keyword { color: #5ec6ff; font-weight: 700; }
 
 .popup-foot { padding: 10px 14px; border-top: 1px solid var(--border); display: flex; gap: 8px; flex-wrap: wrap; }

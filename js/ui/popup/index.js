@@ -237,11 +237,23 @@ function renderPopup() {
       if (!skill) return;
       const rarity = ['common', 'legendary', 'mythic'].includes(skill.rarity) ? skill.rarity : 'common';
       const matches = q && skillMatchesQuery(skill, q);
+      // Split "New Skill" / "Upgrade Skill" so we can colour the action word
+      // (New = green, Upgrade = purple) and the trailing "Skill" word in gray.
+      const rawType = skill.type || 'Skill';
+      const typeParts = rawType.match(/^(\S+)\s+(.+)$/);
+      const actionWord = typeParts ? typeParts[1] : '';
+      const baseWord   = typeParts ? typeParts[2] : rawType;
+      const actionClass = actionWord.toLowerCase() === 'new' ? 'skill-action-new'
+                        : actionWord.toLowerCase() === 'upgrade' ? 'skill-action-upgrade'
+                        : 'skill-action-base';
+      const typeHtml = actionWord
+        ? `<span class="${actionClass}">${actionWord}</span> <span class="skill-action-base">${baseWord}</span>`
+        : `<span class="skill-action-base">${baseWord}</span>`;
       slot.innerHTML = `
         <div class="skill-row r-${rarity}${matches ? ' search-match' : ''}">
           <div class="skill-icon"><img src="${skill.iconPath}" alt="" onerror="this.style.visibility='hidden'"></div>
           <div class="skill-info">
-            <div class="skill-name"><span class="skill-type">${skill.type || 'Skill'}</span> &mdash; ${skill.name}<span class="skill-lvl">Lv.${lvl}/${node.maxLevel}</span></div>
+            <div class="skill-name"><span class="skill-type">${typeHtml}</span> &mdash; <span class="skill-name-text">${skill.name}</span><span class="skill-lvl">Lv.${lvl}/${node.maxLevel}</span></div>
             <div class="skill-text">${formatSkillDescription(skill.description)}</div>
           </div>
         </div>
