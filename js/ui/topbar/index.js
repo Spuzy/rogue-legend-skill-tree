@@ -5,7 +5,8 @@ import { TREES } from '../../core/data.js';
 import { state, getCurrent, getPlanned, setCurrent, setPlanned, setFilter, setActiveTree, resetTree, setSearch } from '../../core/state.js';
 import { rangeCost, formatNumber, formatMinutes, maxAffordableLevel } from '../../core/cost.js';
 import { computeTotals } from '../../core/stats.js';
-import { confirmModal, infoModal } from '../modal.js';
+import { confirmModal, infoModal, promptModal, copyableModal } from '../modal.js';
+import { encode, applyCode } from '../../core/share.js';
 import { isLocked } from '../../core/graph.js';
 import { renderTotalsDetail } from './totalsDetail.js';
 
@@ -183,6 +184,40 @@ export function initTopbar(opts) {
       }
     });
   }
+
+  if (elements.saveBtn) {
+    elements.saveBtn.addEventListener('click', () => {
+      const code = encode();
+      copyableModal({
+        title: 'Share code',
+        message: 'Copy this code and share it. Others can paste it into Load to reproduce your build.',
+        value: code,
+        dismissText: 'Close',
+      });
+    });
+  }
+
+  if (elements.loadBtn) {
+    elements.loadBtn.addEventListener('click', async () => {
+      const code = await promptModal({
+        title: 'Load build',
+        message: 'Paste a share code to load a saved build. This will replace your current levels and plans across both trees.',
+        placeholder: 'Paste share code here…',
+        confirmText: 'Load',
+        cancelText: 'Cancel',
+      });
+      if (!code) return;
+      const ok = applyCode(code);
+      if (!ok) {
+        await confirmModal({
+          title: 'Invalid code',
+          message: 'The share code could not be parsed. Make sure you copied the full code.',
+          confirmText: 'OK',
+          cancelText: 'OK',
+        });
+      }
+    });
+  }
 }
 
 // Detailed breakdown rendering (chips, ID→colour map, etc.) lives in
@@ -316,7 +351,9 @@ function openHelpModal() {
         budget-filter settings are preserved.</li>
         <li>Planned levels are marked in <span class="swatch-plan">pink</span> on the canvas and
         in the popup so you can spot them at a glance.</li>
-        <li>Everything is saved to your browser's local storage &mdash; refreshing or closing the
+        <li><kbd>Save</kbd> generates a compact share code you can send to others or bookmark.
+        <kbd>Load</kbd> restores a build from a pasted share code (replaces both trees).</li>
+        <li>Everything is also saved to your browser's local storage &mdash; refreshing or closing the
         tab will not lose your progress.</li>
       </ul>
     </div>

@@ -66,6 +66,17 @@
   cursor: pointer;
 }
 #set-planned-btn:hover { background: var(--bg-2); border-color: var(--accent); color: var(--accent); }
+#save-btn, #load-btn {
+  background: var(--bg-3);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+#save-btn:hover, #load-btn:hover { background: var(--bg-2); border-color: var(--accent); color: var(--accent); }
 
 /* Compact action buttons that live inside the budget filter card. */
 .filter-actions {
@@ -166,7 +177,7 @@
   .help-btn { width: 28px; height: 28px; font-size: 12px; flex-shrink: 0; }
   .topbar-actions { flex: 1 1 100%; order: 11; gap: 4px; }
   .topbar-actions button { flex: 1; padding: 6px 6px; min-height: 32px; }
-  #reset-btn, #set-planned-btn { font-size: 11px; }
+  #reset-btn, #set-planned-btn, #save-btn, #load-btn { font-size: 11px; }
   .filter-actions { margin-left: 0; flex-wrap: wrap; gap: 4px; }
   .filter-actions button { padding: 4px 8px; min-height: 32px; font-size: 10px; }
 }

@@ -52,6 +52,35 @@
   color: var(--accent);
   margin-right: 6px;
 }
+.app-modal-input {
+  width: 100%;
+  padding: 6px 8px;
+  background: var(--bg-0);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: monospace;
+  box-sizing: border-box;
+}
+.app-modal-input:focus { outline: none; border-color: var(--accent); }
+.app-modal-copy-row {
+  display: flex; gap: 6px; align-items: stretch;
+}
+.app-modal-copy-row .app-modal-input { flex: 1; }
+.app-modal-copy-btn {
+  background: var(--bg-3);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 11px; font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase; letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+.app-modal-copy-btn:hover { background: var(--accent); color: var(--bg-0); border-color: var(--accent); }
+
 .app-modal-actions {
   display: flex; justify-content: flex-end; gap: 8px;
   margin-top: 4px;

@@ -73,6 +73,12 @@ export function setSearch(q) {
   notify();
 }
 
+export function loadSharedState(current, planned) {
+  state.current = current;
+  state.planned = planned;
+  notify();
+}
+
 export function resetAll() {
   // Wipe progress only. Filter state (toggle + values) is preserved so the
   // checkmark stays the source of truth — no off/on dance needed afterwards.
