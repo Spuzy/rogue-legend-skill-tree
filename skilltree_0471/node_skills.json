@@ -826,7 +826,7 @@
           "type": "Upgrade Skill",
           "name": "Energizing Shuriken Lv. 2",
           "rarity": "common",
-          "description": "Every !2! rounds, throw !1! 'Shuriken'. All 'Shurikens' have a chance to grant !+8! 'Ultimate Charge'. {'Chance' increased}",
+          "description": "Every !2! rounds, throw !1! 'Shuriken'. All 'Shurikens' have a chance to grant !+8! 'Ultimate Charge'. {Chance increased}",
           "icon_sprite_name": "EnergizingShuriken",
           "icon_file": "\\icons\\sharedassets0.assets__79282__1635.png"
         },
@@ -835,7 +835,7 @@
           "type": "Upgrade Skill",
           "name": "Fuma Shuriken Lv. 2",
           "rarity": "legendary",
-          "description": "Every !3! 'Shurikens' thrown /{ and at the start of every turn}, throw a massive 'Fuma Shuriken'.",
+          "description": "Every !3! 'Shurikens' thrown {(and at the start of every turn)}, throw a massive 'Fuma Shuriken'.",
           "icon_sprite_name": "Fuma_Shuriken",
           "icon_file": "\\icons\\sharedassets0.assets__79283__1763.png"
         },
