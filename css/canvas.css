@@ -30,7 +30,7 @@
 .node.theme-ice .shape       { fill: #7be5ff; }
 .node.theme-lightning .shape { fill: #cc9e00; }
 .node.theme-poison .shape    { fill: #7adf6d; }
-.node.theme-crit .shape      { fill: #ff5e8a; }
+.node.theme-crit .shape      { fill: #cc9e00; }
 .node.theme-heals .shape     { fill: #a8ff9e; }
 .node.theme-shields .shape   { fill: #6db7ff; }
 .node.theme-dmgreduct .shape { fill: #7fffe6; }
@@ -40,10 +40,10 @@
 .node.theme-shuriken .shape  { fill: #c8c8d8; }
 .node.theme-status .shape    { fill: #aa5bca; }
 .node.theme-wound .shape     { fill: #d63a3a; }
-.node.theme-pet .shape       { fill: #d4a37a; }
-.node.theme-sentinel .shape  { fill: #b8b8c8; }
-.node.theme-pvp .shape       { fill: #ff8a5a; }
-.node.theme-mount .shape     { fill: #b08e6a; }
+.node.theme-pet .shape       { fill: #d77042; }
+.node.theme-sentinel .shape  { fill: #d77042; }
+.node.theme-pvp .shape       { fill: #317cb5; }
+.node.theme-mount .shape     { fill: #317cb5; }
 .node.theme-spec .shape      { fill: #8a78c0; }
 
 /* States */
