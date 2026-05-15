@@ -10,7 +10,8 @@ import { isLocked } from '../../core/graph.js';
 import { renderTotalsDetail } from './totalsDetail.js';
 
 let elements;
-let totalsExpanded = false;
+let totalsCollapsed = false;
+let advancedExpanded = false;
 
 export function initTopbar(opts) {
   elements = opts;
@@ -159,11 +160,26 @@ export function initTopbar(opts) {
 
   if (elements.totalsExpand) {
     elements.totalsExpand.addEventListener('click', () => {
-      totalsExpanded = !totalsExpanded;
-      elements.totalsExpand.setAttribute('aria-expanded', String(totalsExpanded));
-      elements.totalsExpand.textContent = totalsExpanded ? '\u25B4' : '\u25BE';
+      totalsCollapsed = !totalsCollapsed;
+      elements.totalsExpand.setAttribute('aria-expanded', String(!totalsCollapsed));
+      elements.totalsExpand.textContent = totalsCollapsed ? '\u25B8' : '\u25BE';
+      const totalsDiv = elements.totalsExpand.closest('.side-card').querySelector('.totals');
+      if (totalsDiv) totalsDiv.style.display = totalsCollapsed ? 'none' : '';
+      if (elements.advancedToggle) elements.advancedToggle.hidden = totalsCollapsed;
+      if (totalsCollapsed && elements.totalsDetail) {
+        elements.totalsDetail.classList.remove('open');
+        advancedExpanded = false;
+        if (elements.advancedToggle) elements.advancedToggle.textContent = 'Show Advanced';
+      }
+    });
+  }
+
+  if (elements.advancedToggle) {
+    elements.advancedToggle.addEventListener('click', () => {
+      advancedExpanded = !advancedExpanded;
+      elements.advancedToggle.textContent = advancedExpanded ? 'Hide Advanced' : 'Show Advanced';
       if (elements.totalsDetail) {
-        elements.totalsDetail.classList.toggle('open', totalsExpanded);
+        elements.totalsDetail.classList.toggle('open', advancedExpanded);
       }
     });
   }
@@ -292,7 +308,10 @@ function openHelpModal() {
       <ul>
         <li>Tabs at the bottom switch between the Adventure and Specialization trees; totals on
         the right are tracked across <i>both</i> trees.</li>
-        <li>Click <kbd>▾</kbd> next to "Totals" for the per-pet / sentinel / mount / PvP breakdown.</li>
+        <li>Click <kbd>▾</kbd> next to "Totals" to collapse the panel; click <kbd>Show Advanced</kbd>
+        for the per-pet / sentinel / mount / PvP breakdown.</li>
+        <li>With a node popup open, press <kbd>1</kbd>&ndash;<kbd>9</kbd> to set its level
+        (<kbd>0</kbd>&nbsp;=&nbsp;level&nbsp;10). Exceeding the max clamps to max.</li>
         <li><kbd>Reset</kbd> clears all levels and plans in the <i>active</i> tree only;
         budget-filter settings are preserved.</li>
         <li>Planned levels are marked in <span class="swatch-plan">pink</span> on the canvas and
