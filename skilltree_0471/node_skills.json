@@ -226,7 +226,7 @@
           "type": "Upgrade Skill",
           "name": "Ice Spikes Lv. 2", 
           "rarity": "legendary",
-          "description": "When you are 'attacked' while having a 'Shield' up, 'counter-attack' with 'Icicle' | {2 'Icicles'}.\nStart combat with a shield equal to !15%! of 'Max HP'.",
+          "description": "When you are 'attacked' while having a 'Shield' up, 'counter-attack' with !1!/{2} 'Icicle'.\nStart combat with a shield equal to !15%! of 'Max HP'.",
           "icon_sprite_name": "Ice_Spikes",
           "icon_file": "\\icons\\sharedassets0.assets__79207__1985.png"
         },
@@ -235,7 +235,7 @@
           "type": "New Skill",
           "name": "Deadly Ice",
           "rarity": "common",
-          "description": "Every time 'Icicle' critically strikes, cast 'Frost Strike' | {2 times}",
+          "description": "Every time 'Icicle' critically strikes, cast !1!/{2} 'Frost Strike'",
           "icon_sprite_name": "Deadly_Ice",
           "icon_file": "\\icons\\sharedassets0.assets__79204__1937.png"
         }
@@ -775,7 +775,7 @@
           "type": "New Skill",
           "name": "Desperate Cleave",
           "rarity": "common",
-          "description": "At the end of your turn, if you are below !<40%! 'HP', use 'Cleave' | {2 times}",
+          "description": "At the end of your turn, if you are below !<40%! 'HP', use !1!/{2} 'Cleave'",
           "icon_sprite_name": "Desperate_Cleave",
           "icon_file": "\\icons\\sharedassets0.assets__79311__2089.png"
         },
@@ -826,7 +826,7 @@
           "type": "Upgrade Skill",
           "name": "Energizing Shuriken Lv. 2",
           "rarity": "common",
-          "description": "Every !2! rounds, throw !1! 'Shuriken'. All 'Shurikens' have a chance to grant !+8! 'Ultimate Charge'. | {'Chance' increased}",
+          "description": "Every !2! rounds, throw !1! 'Shuriken'. All 'Shurikens' have a chance to grant !+8! 'Ultimate Charge'. {'Chance' increased}",
           "icon_sprite_name": "EnergizingShuriken",
           "icon_file": "\\icons\\sharedassets0.assets__79282__1635.png"
         },
@@ -835,7 +835,7 @@
           "type": "Upgrade Skill",
           "name": "Fuma Shuriken Lv. 2",
           "rarity": "legendary",
-          "description": "Every !3! 'Shurikens' thrown | {, and at the start of every turn}, throw a massive 'Fuma Shuriken'.",
+          "description": "Every !3! 'Shurikens' thrown /{ and at the start of every turn}, throw a massive 'Fuma Shuriken'.",
           "icon_sprite_name": "Fuma_Shuriken",
           "icon_file": "\\icons\\sharedassets0.assets__79283__1763.png"
         },
@@ -904,7 +904,7 @@
           "type": "New Skill",
           "name": "Warrior Lv. 2",
           "rarity": "legendary",
-          "description": "'Physical DMG' !+30%!/{+50%}, 'Weapon Attack DMG' !+30%!/{+50%}, 'Magical DMG' ?-30%? | ?-50%?",
+          "description": "'Physical DMG' !+30%!/{+50%}, 'Weapon Attack DMG' !+30%!/{+50%}, 'Magical DMG' ?-30%?/?-50%?",
           "icon_sprite_name": "Warrior",
           "icon_file": "\\icons\\sharedassets0.assets__79296__1636.png"
         }
@@ -919,7 +919,7 @@
           "type": "New Skill",
           "name": "Wizard Lv. 2",
           "rarity": "legendary",
-          "description": "'Magical DMG' !+30%!/{+50%}, 'Skill DMG' !+30%!/{+50%}, 'Physical DMG' ?-30%? | ?-50%?",
+          "description": "'Magical DMG' !+30%!/{+50%}, 'Skill DMG' !+30%!/{+50%}, 'Physical DMG' ?-30%?/?-50%?",
           "icon_sprite_name": "Wizard",
           "icon_file": "\\icons\\sharedassets0.assets__79299__1484.png"
         }
