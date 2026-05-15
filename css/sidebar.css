@@ -108,3 +108,26 @@
 }
 .td-chip-solo .td-chip-name { color: var(--text); font-weight: 600; }
 .td-empty { font-size: 10px; color: var(--text-dim); font-style: italic; }
+
+.advanced-toggle {
+  display: block; width: 100%;
+  margin-top: 6px; padding: 5px 0;
+  background: transparent; border: 1px solid var(--border);
+  border-radius: 4px; color: var(--text-dim);
+  font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+  cursor: pointer;
+}
+.advanced-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ── Mobile sidebar ── */
+@media (max-width: 600px) {
+  #sidebar .side-card { padding: 6px 8px; }
+  .side-title { font-size: 9px; margin-bottom: 5px; }
+  .side-sub { font-size: 8px; }
+  .totals { gap: 2px; }
+  .total-row { padding: 3px 6px; font-size: 10px; }
+  .total-row .total-lbl { font-size: 9px; }
+  .totals-detail { max-height: 40vh; }
+  .expand-btn { width: 20px; height: 18px; font-size: 10px; }
+  .advanced-toggle { font-size: 8px; padding: 3px 0; margin-top: 4px; }
+}

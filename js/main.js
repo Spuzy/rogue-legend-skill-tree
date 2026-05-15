@@ -1,8 +1,8 @@
 // Bootstrap.
 
-import { subscribe, state } from './core/state.js';
+import { subscribe, state, setCurrent } from './core/state.js';
 import { initRender, render, centerTree } from './render/index.js';
-import { initPopup, refreshPopup, closePopup } from './ui/popup/index.js';
+import { initPopup, refreshPopup, closePopup, getPopupNode } from './ui/popup/index.js';
 import { initTopbar, renderTopbar } from './ui/topbar/index.js';
 import { loadSkillMeta, getNodeMeta } from './core/skill_meta.js';
 import { enrichTreesWithMeta } from './core/data.js';
@@ -52,6 +52,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     totalSpecSpent: $('total-spec-spent'),
     totalsExpand:   $('totals-expand'),
     totalsDetail:   $('totals-detail'),
+    advancedToggle: $('totals-advanced-toggle'),
     resetBtn:      $('reset-btn'),
     setPlannedBtn: $('set-planned-btn'),
     setFilteredBtn:$('set-filtered-btn'),
@@ -71,6 +72,19 @@ window.addEventListener('DOMContentLoaded', async () => {
       centerTree(state.activeTree);
     }
   };
+  // Keyboard shortcuts: 1-9 and 0 set the open node's level (0 = level 10).
+  window.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.ctrlKey || e.altKey || e.metaKey) return;
+    const node = getPopupNode();
+    if (!node) return;
+    const key = e.key;
+    if (key >= '0' && key <= '9') {
+      const lvl = key === '0' ? 10 : Number(key);
+      setCurrent(node, Math.min(lvl, node.maxLevel));
+    }
+  });
+
   subscribe(refresh);
   refresh();
   window.__rl_booted = true;

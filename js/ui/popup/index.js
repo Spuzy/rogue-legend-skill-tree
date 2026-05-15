@@ -11,14 +11,12 @@ import { formatSkillDescription } from './skillDescription.js';
 let host;       // <div id="popup">
 let currentNode = null;
 
+export function getPopupNode() { return currentNode; }
+
 export function initPopup(hostEl) {
   host = hostEl;
   host.classList.add('popup');
   host.style.display = 'none';
-  // The popup only closes via its own × button (wired up in renderPopup) or
-  // by switching to a different node. No outside-click / Esc close — the
-  // user explicitly wants the menu to stay open while interacting with
-  // search, filter, totals, etc.
 }
 
 export function closePopup() {

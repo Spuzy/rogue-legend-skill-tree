@@ -56,10 +56,10 @@
     <aside id="popup"></aside>
 
     <aside id="sidebar">
-      <section class="side-card" title="Totals tracked across BOTH trees. Click ▾ for the per-pet / sentinel / mount / PvP breakdown.">
+      <section class="side-card" title="Totals tracked across BOTH trees. Click ▾ to collapse.">
         <div class="side-title">
           Totals <span class="side-sub">both trees</span>
-          <button id="totals-expand" class="expand-btn" type="button" aria-expanded="false" title="Show detailed breakdown">▾</button>
+          <button id="totals-expand" class="expand-btn" type="button" aria-expanded="true" title="Collapse totals">▾</button>
         </div>
         <div class="totals">
           <div class="total-row total-hp"><span class="total-lbl">HP</span><span class="total-val" id="total-hp">+0%</span></div>
@@ -74,6 +74,7 @@
             <span class="total-val" id="total-spec-spent">0</span>
           </div>
         </div>
+        <button id="totals-advanced-toggle" class="advanced-toggle" type="button">Show Advanced</button>
         <div class="totals-detail" id="totals-detail"></div>
       </section>
     </aside>
