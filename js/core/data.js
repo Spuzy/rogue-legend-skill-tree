@@ -53,6 +53,11 @@ function themeFromLocalId(localId) {
   if (localId === 'small_atk_buff') return 'atk';
   if (localId === 'small_def_buff') return 'def';
   if (localId === 'small_hp_buff')  return 'hp';
+  // PvP / Mount must be matched before generic effect rules (e.g. dmg_reduction)
+  // so that ids like `spec_pvp_dmg_reduction` and `spec_dmg_reduction_mounted`
+  // get the PvP/Mount theme instead of the dmgreduct theme.
+  if (localId.includes('pvp'))     return 'pvp';
+  if (localId.includes('mount') || localId.includes('dino') || localId.includes('mounted')) return 'mount';
   if (localId.includes('general_enhancement')) return 'general';
   if (localId.includes('warrior')) return 'warrior';
   if (localId.includes('wizard'))  return 'wizard';
@@ -72,8 +77,6 @@ function themeFromLocalId(localId) {
   if (localId.includes('wound'))   return 'wound';
   if (localId.includes('pets_enhancement') || localId === 'spec_pet_dmg' || localId.endsWith('_pet_dmg')) return 'pet';
   if (localId.includes('sentinel'))return 'sentinel';
-  if (localId.includes('pvp'))     return 'pvp';
-  if (localId.includes('mount') || localId.includes('dino'))   return 'mount';
   return 'spec';
 }
 
