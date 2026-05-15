@@ -55,6 +55,8 @@ window.addEventListener('DOMContentLoaded', async () => {
     advancedToggle: $('totals-advanced-toggle'),
     resetBtn:      $('reset-btn'),
     setPlannedBtn: $('set-planned-btn'),
+    saveBtn:       $('save-btn'),
+    loadBtn:       $('load-btn'),
     setFilteredBtn:$('set-filtered-btn'),
     planFilteredBtn:$('plan-filtered-btn'),
     searchInput:   $('search-input'),

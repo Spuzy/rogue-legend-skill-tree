@@ -2,13 +2,8 @@
 // dialog styled to match the rest of the simulator.
 //
 // Usage:
-//   const ok = await confirmModal({
-//     title: 'Reset Adventure tree',
-//     message: 'This clears every level and plan in the Adventure tree.',
-//     items: ['• Adventure HP', '• Adventure ATK'],           // optional
-//     confirmText: 'Reset', cancelText: 'Cancel',
-//     tone: 'danger',                                          // 'danger' | 'normal' (default)
-//   });
+//   const ok = await confirmModal({ ... });
+//   const text = await promptModal({ title, message, placeholder, ... });
 
 let host = null;
 let activeReject = null;
@@ -91,6 +86,106 @@ export function confirmModal(opts = {}) {
   if (activeReject) { const r = activeReject; activeReject = null; r(false); }
 
   return new Promise((resolve) => { activeReject = resolve; });
+}
+
+// Prompt modal — shows a message plus a text input and returns the entered
+// string (or null if cancelled).
+export function promptModal(opts = {}) {
+  const h = ensureHost();
+  const title = opts.title || 'Input';
+  const message = opts.message || '';
+  const placeholder = opts.placeholder || '';
+  const confirmText = opts.confirmText || 'OK';
+  const cancelText = opts.cancelText || 'Cancel';
+
+  h.querySelector('.app-modal-title').textContent = title;
+  const body = h.querySelector('.app-modal-body');
+  body.innerHTML = '';
+  if (message) {
+    const p = document.createElement('p');
+    p.className = 'app-modal-msg';
+    p.textContent = message;
+    body.appendChild(p);
+  }
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.placeholder = placeholder;
+  input.className = 'app-modal-input';
+  input.autocomplete = 'off';
+  input.spellcheck = false;
+  body.appendChild(input);
+
+  const confirmBtn = h.querySelector('.app-modal-confirm');
+  confirmBtn.textContent = confirmText;
+  confirmBtn.className = 'app-modal-confirm';
+  h.querySelector('.app-modal-cancel').textContent = cancelText;
+
+  h.classList.remove('hidden');
+  setTimeout(() => input.focus(), 0);
+
+  if (activeReject) { const r = activeReject; activeReject = null; r(false); }
+
+  return new Promise((resolve) => {
+    activeReject = (ok) => resolve(ok ? input.value.trim() : null);
+  });
+}
+
+// Copyable modal — shows a read-only text field the user can copy.
+export function copyableModal(opts = {}) {
+  const h = ensureHost();
+  const title = opts.title || 'Share code';
+  const message = opts.message || '';
+  const value = opts.value || '';
+  const dismissText = opts.dismissText || 'Close';
+
+  h.querySelector('.app-modal-title').textContent = title;
+  const body = h.querySelector('.app-modal-body');
+  body.innerHTML = '';
+  if (message) {
+    const p = document.createElement('p');
+    p.className = 'app-modal-msg';
+    p.textContent = message;
+    body.appendChild(p);
+  }
+  const row = document.createElement('div');
+  row.className = 'app-modal-copy-row';
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.readOnly = true;
+  input.value = value;
+  input.className = 'app-modal-input';
+  row.appendChild(input);
+
+  const copyBtn = document.createElement('button');
+  copyBtn.type = 'button';
+  copyBtn.textContent = 'Copy';
+  copyBtn.className = 'app-modal-copy-btn';
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(value).then(() => {
+      copyBtn.textContent = 'Copied!';
+      setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1500);
+    });
+  });
+  row.appendChild(copyBtn);
+  body.appendChild(row);
+
+  const cancelBtn = h.querySelector('.app-modal-cancel');
+  const confirmBtn = h.querySelector('.app-modal-confirm');
+  cancelBtn.hidden = true;
+  confirmBtn.textContent = dismissText;
+  confirmBtn.className = 'app-modal-confirm';
+
+  h.classList.remove('hidden');
+  setTimeout(() => { input.focus(); input.select(); }, 0);
+
+  if (activeReject) { const r = activeReject; activeReject = null; r(false); }
+
+  return new Promise((resolve) => {
+    activeReject = () => {
+      cancelBtn.hidden = false;
+      resolve();
+    };
+  });
 }
 
 // Read-only info dialog. Single dismiss button, supports trusted HTML body
