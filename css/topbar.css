@@ -144,3 +144,24 @@
   transition: background 120ms, color 120ms;
 }
 .help-btn:hover { background: var(--search); color: var(--bg-0); }
+
+/* ── Mobile topbar ── */
+@media (max-width: 600px) {
+  #topbar { padding: 6px 8px; gap: 6px; }
+  .brand .subtitle { display: none; }
+  .brand .tree-label { font-size: 16px; }
+  .topbar-spacer { display: none; }
+  .topbar-card { flex: 1 1 100%; min-width: 0; }
+  .topbar-card-title { font-size: 8px; }
+  .topbar-stats { gap: 8px; }
+  .topbar-filter { gap: 6px; }
+  .topbar-filter .tb-num input { width: 60px; }
+  .topbar-search { flex: 1 1 100%; order: 10; }
+  .topbar-search input { min-width: 0; }
+  .help-btn { width: 36px; height: 36px; font-size: 16px; flex-shrink: 0; }
+  .topbar-actions { flex: 1 1 100%; order: 11; }
+  .topbar-actions button { flex: 1; padding: 10px 8px; min-height: 44px; }
+  #reset-btn, #set-planned-btn { font-size: 13px; }
+  .filter-actions { margin-left: 0; flex-wrap: wrap; }
+  .filter-actions button { padding: 8px 10px; min-height: 44px; }
+}

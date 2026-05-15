@@ -19,3 +19,9 @@
 .tab-ico { display: inline-block; width: 18px; height: 18px; border-radius: 4px; }
 .tab-ico-adventure { background: linear-gradient(135deg, #ff8e3c, #ffd84a); }
 .tab-ico-spec      { background: linear-gradient(135deg, #c97cff, #5fb5ff); }
+
+/* ── Mobile tabs ── */
+@media (max-width: 600px) {
+  #tabs { padding: 6px; gap: 4px; }
+  #tabs button { flex: 1; padding: 10px 12px; min-height: 44px; font-size: 13px; justify-content: center; }
+}

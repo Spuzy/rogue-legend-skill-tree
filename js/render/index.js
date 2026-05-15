@@ -40,14 +40,13 @@ export function initRender(svgEl) {
   viewport.append(edgesG, nodesG);
   svg.appendChild(viewport);
 
-  // Pan
+  // Pan (mouse)
   let dragging = false, startX = 0, startY = 0, origX = 0, origY = 0;
   svg.addEventListener('mousedown', e => {
     if (e.target.closest('.node')) return;
     dragging = true; startX = e.clientX; startY = e.clientY;
     origX = view.x; origY = view.y;
     svg.classList.add('panning');
-    // Pan must NOT close the popup — keep the currently inspected node visible.
   });
   window.addEventListener('mousemove', e => {
     if (!dragging) return;
@@ -56,7 +55,66 @@ export function initRender(svgEl) {
     applyTransform();
   });
   window.addEventListener('mouseup', () => { dragging = false; svg.classList.remove('panning'); });
-  // Zoom
+
+  // Pan & pinch-zoom (touch)
+  let touchDragging = false;
+  let lastPinchDist = 0;
+  let lastPinchMidX = 0, lastPinchMidY = 0;
+
+  svg.addEventListener('touchstart', e => {
+    if (e.touches.length === 1) {
+      const t = e.touches[0];
+      if (e.target.closest('.node')) return;
+      touchDragging = true;
+      startX = t.clientX; startY = t.clientY;
+      origX = view.x; origY = view.y;
+      svg.classList.add('panning');
+    } else if (e.touches.length === 2) {
+      touchDragging = false;
+      svg.classList.remove('panning');
+      const t0 = e.touches[0], t1 = e.touches[1];
+      lastPinchDist = Math.hypot(t1.clientX - t0.clientX, t1.clientY - t0.clientY);
+      lastPinchMidX = (t0.clientX + t1.clientX) / 2;
+      lastPinchMidY = (t0.clientY + t1.clientY) / 2;
+    }
+    e.preventDefault();
+  }, { passive: false });
+
+  svg.addEventListener('touchmove', e => {
+    if (e.touches.length === 1 && touchDragging) {
+      const t = e.touches[0];
+      view.x = origX + (t.clientX - startX);
+      view.y = origY + (t.clientY - startY);
+      applyTransform();
+    } else if (e.touches.length === 2) {
+      const t0 = e.touches[0], t1 = e.touches[1];
+      const dist = Math.hypot(t1.clientX - t0.clientX, t1.clientY - t0.clientY);
+      const midX = (t0.clientX + t1.clientX) / 2;
+      const midY = (t0.clientY + t1.clientY) / 2;
+      const rect = svg.getBoundingClientRect();
+      const mx = midX - rect.left;
+      const my = midY - rect.top;
+      const factor = dist / lastPinchDist;
+      const newScale = Math.max(0.15, Math.min(2.5, view.scale * factor));
+      view.x = mx - (mx - view.x) * (newScale / view.scale);
+      view.y = my - (my - view.y) * (newScale / view.scale);
+      view.x += midX - lastPinchMidX;
+      view.y += midY - lastPinchMidY;
+      view.scale = newScale;
+      lastPinchDist = dist;
+      lastPinchMidX = midX;
+      lastPinchMidY = midY;
+      applyTransform();
+    }
+    e.preventDefault();
+  }, { passive: false });
+
+  svg.addEventListener('touchend', () => {
+    touchDragging = false;
+    svg.classList.remove('panning');
+  });
+
+  // Zoom (mouse wheel)
   svg.addEventListener('wheel', e => {
     e.preventDefault();
     const rect = svg.getBoundingClientRect();
@@ -64,7 +122,6 @@ export function initRender(svgEl) {
     const my = e.clientY - rect.top;
     const factor = e.deltaY < 0 ? 1.1 : 1 / 1.1;
     const newScale = Math.max(0.15, Math.min(2.5, view.scale * factor));
-    // Zoom toward cursor
     view.x = mx - (mx - view.x) * (newScale / view.scale);
     view.y = my - (my - view.y) * (newScale / view.scale);
     view.scale = newScale;

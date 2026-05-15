@@ -108,3 +108,12 @@
 }
 .td-chip-solo .td-chip-name { color: var(--text); font-weight: 600; }
 .td-empty { font-size: 10px; color: var(--text-dim); font-style: italic; }
+
+/* ── Mobile sidebar ── */
+@media (max-width: 600px) {
+  #sidebar .side-card { padding: 8px 10px; }
+  .totals { gap: 3px; }
+  .total-row { padding: 4px 8px; font-size: 12px; }
+  .totals-detail { max-height: 40vh; }
+  .expand-btn { width: 28px; height: 28px; font-size: 14px; }
+}

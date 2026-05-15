@@ -171,6 +171,30 @@
 
 @media (max-width: 900px) {
   .popup { width: calc(100% - 36px); }
-  #sidebar { width: calc(100% - 28px); position: static; margin: 10px 14px; }
   .stats { flex-direction: row; flex-wrap: wrap; }
+}
+
+@media (max-width: 600px) {
+  #sidebar { max-width: 200px; }
+}
+@media (max-width: 600px) {
+  .popup {
+    position: fixed;
+    inset: 0;
+    width: 100%; max-height: 100%;
+    border-radius: 0;
+    z-index: 50;
+  }
+  .popup .close { font-size: 28px; padding: 4px 10px; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .popup-head { padding: 10px; gap: 8px; }
+  .popup-proj { padding: 8px 10px; }
+  .lvl-table tbody td { padding: 8px 6px; }
+  .lvl-meta { flex-wrap: wrap; gap: 8px; }
+  .lvl-meta .lvl-actions { margin-left: 0; width: 100%; display: flex; gap: 6px; }
+  .lvl-meta .lvl-actions button { flex: 1; min-height: 44px; padding: 8px 6px; font-size: 12px; }
+  .lvl-table tbody tr:not(.lvl-row) .actions button { min-height: 44px; padding: 6px 12px; }
+  .popup-foot { padding: 8px 10px; }
+  .popup-foot button { flex: 1; min-height: 44px; padding: 8px 10px; font-size: 13px; }
+  .skill-row { grid-template-columns: 36px 1fr; gap: 8px; padding: 6px 8px; }
+  .skill-row .skill-icon { width: 36px; height: 36px; }
 }
