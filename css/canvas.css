@@ -28,9 +28,9 @@
 .node.theme-wizard .shape    { fill: var(--wizard); }
 .node.theme-fire .shape      { fill: #ff7a3a; }
 .node.theme-ice .shape       { fill: #7be5ff; }
-.node.theme-lightning .shape { fill: #cc9e00; }
+.node.theme-lightning .shape { fill: var(--general); }
 .node.theme-poison .shape    { fill: #7adf6d; }
-.node.theme-crit .shape      { fill: #cc9e00; }
+.node.theme-crit .shape      { fill: var(--general); }
 .node.theme-heals .shape     { fill: #a8ff9e; }
 .node.theme-shields .shape   { fill: #6db7ff; }
 .node.theme-dmgreduct .shape { fill: #7fffe6; }
