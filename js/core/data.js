@@ -1,6 +1,7 @@
 // Parse the embedded CSV into per-tree node graphs.
 
 import { RAW_CSV, DISPLAY_NAMES, TREE_CONFIG } from './data.generated.js';
+import { themeForLocalId } from './theme.js';
 
 function parseCSV(text) {
   // Strict-enough CSV: every field is quoted in our source data.
@@ -49,37 +50,6 @@ function pipeList(s) {
   return s.split('|').filter(Boolean);
 }
 
-function themeFromLocalId(localId) {
-  if (localId === 'small_atk_buff') return 'atk';
-  if (localId === 'small_def_buff') return 'def';
-  if (localId === 'small_hp_buff')  return 'hp';
-  // PvP / Mount must be matched before generic effect rules (e.g. dmg_reduction)
-  // so that ids like `spec_pvp_dmg_reduction` and `spec_dmg_reduction_mounted`
-  // get the PvP/Mount theme instead of the dmgreduct theme.
-  if (localId.includes('pvp'))     return 'pvp';
-  if (localId.includes('mount') || localId.includes('dino') || localId.includes('mounted')) return 'mount';
-  if (localId.includes('general_enhancement')) return 'general';
-  if (localId.includes('warrior')) return 'warrior';
-  if (localId.includes('wizard'))  return 'wizard';
-  if (localId.includes('fire'))    return 'fire';
-  if (localId.includes('ice'))     return 'ice';
-  if (localId.includes('lightning')) return 'lightning';
-  if (localId.includes('poison'))  return 'poison';
-  if (localId.includes('crit'))    return 'crit';
-  if (localId.includes('heals'))   return 'heals';
-  if (localId.includes('shields')) return 'shields';
-  if (localId.includes('dmgreduct') || localId.includes('dmg_reduction')) return 'dmgreduct';
-  if (localId.includes('enraged')) return 'enraged';
-  if (localId.includes('combo'))   return 'combo';
-  if (localId.includes('counter')) return 'counter';
-  if (localId.includes('shuriken'))return 'shuriken';
-  if (localId.includes('status'))  return 'status';
-  if (localId.includes('wound'))   return 'wound';
-  if (localId.includes('pets_enhancement') || localId === 'spec_pet_dmg' || localId.endsWith('_pet_dmg')) return 'pet';
-  if (localId.includes('sentinel'))return 'sentinel';
-  return 'spec';
-}
-
 function buildTree(treeId, rows) {
   const cfg = TREE_CONFIG[treeId];
   const nodes = new Map();
@@ -99,7 +69,7 @@ function buildTree(treeId, rows) {
       totalMinutes: Number(r.totalMinutes),
       childIds,
       parentIds: [],
-      theme: themeFromLocalId(r.localDataId),
+      theme: themeForLocalId(r.localDataId),
     });
   }
   // Derive parents.
