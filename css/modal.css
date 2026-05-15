@@ -85,3 +85,47 @@
   background: #ff7a7a;
   border-color: #ff7a7a;
 }
+
+/* Wide variant used by the read-only help / info dialog. */
+.app-modal-panel.app-modal-wide {
+  min-width: 480px;
+  max-width: min(640px, calc(100vw - 32px));
+}
+.app-modal-help h3 {
+  margin: 14px 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--accent);
+}
+.app-modal-help h3:first-child { margin-top: 0; }
+.app-modal-help p { margin: 0 0 8px; }
+.app-modal-help ul {
+  margin: 0 0 10px;
+  padding-left: 18px;
+  color: var(--text);
+}
+.app-modal-help ul li { margin: 4px 0; }
+.app-modal-help kbd {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 11px;
+  font-family: inherit;
+  color: var(--accent);
+}
+.app-modal-help .tip {
+  background: var(--bg-0);
+  border-left: 3px solid var(--accent);
+  padding: 8px 10px;
+  margin: 6px 0 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.app-modal-help .tip b { color: var(--text); }
+.app-modal-help .swatch-green   { color: #5ee08a; font-weight: 700; }
+.app-modal-help .swatch-purple  { color: var(--accent-2); font-weight: 700; }
+.app-modal-help .swatch-plan    { color: var(--plan); font-weight: 700; }
+.app-modal-help .swatch-search  { color: var(--search); font-weight: 700; }

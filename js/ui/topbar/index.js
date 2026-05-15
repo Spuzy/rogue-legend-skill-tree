@@ -5,7 +5,7 @@ import { TREES } from '../../core/data.js';
 import { state, getCurrent, getPlanned, setCurrent, setFilter, setActiveTree, resetTree, setSearch } from '../../core/state.js';
 import { rangeCost, formatNumber, formatMinutes, maxAffordableLevel } from '../../core/cost.js';
 import { computeTotals } from '../../core/stats.js';
-import { confirmModal } from '../modal.js';
+import { confirmModal, infoModal } from '../modal.js';
 import { isLocked } from '../../core/graph.js';
 import { renderTotalsDetail } from './totalsDetail.js';
 
@@ -58,6 +58,9 @@ export function initTopbar(opts) {
       if (elements.searchInput) elements.searchInput.focus();
     });
   }
+
+  const helpBtn = document.getElementById('help-btn');
+  if (helpBtn) helpBtn.addEventListener('click', () => openHelpModal());
 
   elements.resetBtn.addEventListener('click', async () => {
     const treeId = state.activeTree;
@@ -191,5 +194,74 @@ export function renderTopbar() {
   if (elements.totalSpecSpent) elements.totalSpecSpent.textContent = formatNumber(totals.specSpent);
 
   renderTotalsDetail(elements.totalsDetail);
+}
+
+// Help / how-to dialog opened from the round info button next to the search.
+// Content is author-authored HTML; do NOT interpolate user data here.
+function openHelpModal() {
+  const html = `
+    <div class="app-modal-help">
+      <p>The simulator helps you plan and track Adventure and Specialization skill-tree spending
+      from the in-game Rogue Legend trees.</p>
+
+      <h3>Setting &amp; planning levels</h3>
+      <ul>
+        <li>Click <kbd>Set</kbd> next to a level in a node's popup to mark that level as already
+        purchased in-game.</li>
+        <li>Click <kbd>Plan</kbd> to queue a level without spending it &mdash; planned cost is
+        shown in the totals row so you can budget ahead.</li>
+        <li>Use <kbd>Set</kbd> / <kbd>Plan</kbd> on a <i>locked</i> node and the simulator will
+        automatically set or plan level 1 of every prerequisite needed to unlock it.</li>
+        <li><kbd>Set Planned</kbd> in the top right promotes every planned level in the active
+        tree to "current".</li>
+      </ul>
+
+      <h3>Search</h3>
+      <ul>
+        <li>Type in the search box to highlight matching nodes and unlocked skills.
+        Matches glow <span class="swatch-search">cyan</span>.</li>
+        <li>Press <kbd>Esc</kbd> while focused on the search box to clear it.</li>
+      </ul>
+
+      <h3>Skill descriptions</h3>
+      <ul>
+        <li><span class="swatch-green">Green</span> numbers are the skill's base value.</li>
+        <li><span class="swatch-purple">Purple</span> numbers are the upgraded "+" value some
+        skills can roll into mid-run.</li>
+        <li>The skill name is tinted by its rarity (common, legendary, mythic) and the
+        "New / Upgrade Skill" label matches the action colour.</li>
+      </ul>
+
+      <h3>Budget filter</h3>
+      <ul>
+        <li>Enter your current book and gem stockpile, then toggle the filter
+        <kbd>On</kbd> &mdash; affordable next steps are highlighted.</li>
+        <li>Keep <kbd>Accum.</kbd> on to highlight nodes whose total cost from your current level
+        fits the budget. Switch it off to highlight any single level whose individual cost fits.</li>
+        <li><kbd>Set Filtered</kbd> appears while the filter is on &mdash; it promotes every
+        highlighted node in the active tree to the highest level its budget allows.</li>
+      </ul>
+
+      <div class="tip">
+        <b>Tip:</b> if nothing lights up with the filter on, slowly increase the book / gem values
+        until results appear. The first node to highlight is your cheapest next upgrade &mdash;
+        especially handy when hunting % stat nodes.
+      </div>
+
+      <h3>Other useful bits</h3>
+      <ul>
+        <li>Tabs at the bottom switch between the Adventure and Specialization trees; totals on
+        the right are tracked across <i>both</i> trees.</li>
+        <li>Click <kbd>▾</kbd> next to "Totals" for the per-pet / sentinel / mount / PvP breakdown.</li>
+        <li><kbd>Reset</kbd> clears all levels and plans in the <i>active</i> tree only;
+        budget-filter settings are preserved.</li>
+        <li>Planned levels are marked in <span class="swatch-plan">pink</span> on the canvas and
+        in the popup so you can spot them at a glance.</li>
+        <li>Everything is saved to your browser's local storage &mdash; refreshing or closing the
+        tab will not lose your progress.</li>
+      </ul>
+    </div>
+  `;
+  infoModal({ title: 'How to use the simulator', html, dismissText: 'Close' });
 }
 

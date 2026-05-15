@@ -92,3 +92,41 @@ export function confirmModal(opts = {}) {
 
   return new Promise((resolve) => { activeReject = resolve; });
 }
+
+// Read-only info dialog. Single dismiss button, supports trusted HTML body
+// (callers must NOT pass user-controlled HTML — content is author-authored).
+export function infoModal(opts = {}) {
+  const h = ensureHost();
+  const title = opts.title || 'Info';
+  const html  = opts.html || '';
+  const dismissText = opts.dismissText || 'Got it';
+
+  h.querySelector('.app-modal-title').textContent = title;
+  const body = h.querySelector('.app-modal-body');
+  body.innerHTML = html;
+
+  // Hide cancel, repurpose confirm as a single dismiss button.
+  const cancelBtn  = h.querySelector('.app-modal-cancel');
+  const confirmBtn = h.querySelector('.app-modal-confirm');
+  cancelBtn.hidden = true;
+  confirmBtn.textContent = dismissText;
+  confirmBtn.className = 'app-modal-confirm';
+
+  // Widen the panel for long-form content.
+  const panel = h.querySelector('.app-modal-panel');
+  panel.classList.add('app-modal-wide');
+
+  h.classList.remove('hidden');
+  setTimeout(() => confirmBtn.focus(), 0);
+
+  if (activeReject) { const r = activeReject; activeReject = null; r(false); }
+
+  return new Promise((resolve) => {
+    activeReject = (v) => {
+      // Restore default modal shape for the next confirm() call.
+      cancelBtn.hidden = false;
+      panel.classList.remove('app-modal-wide');
+      resolve(v);
+    };
+  });
+}
