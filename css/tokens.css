@@ -1,0 +1,39 @@
+/* Design tokens — colors, spacing primitives. Loaded first so every other
+ * stylesheet can reference these CSS custom properties.
+ */
+
+:root {
+  --bg-0: #1a1330;
+  --bg-1: #241a45;
+  --bg-2: #2e2358;
+  --bg-3: #3a2c6e;
+  --border: #4d3a8a;
+  --text: #f0eaff;
+  --text-dim: #b8a7e6;
+  --accent: #ffd84a;
+  --accent-2: #c97cff;
+  --book: #f0c060;
+  --gem: #5fd0ff;
+  --atk: #ff8e3c;
+  --def: #5fb5ff;
+  --hp: #6dd76d;
+  --general: #ffd84a;
+  --warrior: #ff5e5e;
+  --wizard: #c97cff;
+  --locked: #4d4060;
+  --maxed: #ffd84a;
+  --plan: #ff5fdc;
+  --fit: #6dffc7;
+  --search: #29d6ff;
+
+  /* Rarity + per-entity tints used by the totals breakdown */
+  --rarity-epic:      #c97cff;
+  --rarity-legendary: #ff8e3c;
+  --rarity-mythic:    #ff5e5e;
+  --c-purple:  #c97cff;
+  --c-red:     #ff5e5e;
+  --c-darkred: #c93a3a;
+  --c-yellow:  #ffd84a;
+  --c-ice:     #7fdcff;
+  --c-grey:    #b8a7e6;
+}

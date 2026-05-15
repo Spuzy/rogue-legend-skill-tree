@@ -1,0 +1,1365 @@
+[
+  {
+    "m_name": "Combo Enhancement 1",
+    "node_id": "adventure_combo_enhancement_1",
+    "display_name": "Combo Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Combo_Enhancement",
+    "icon_file": "\\icons\\adventure_combo_enhancement_1.png"
+  },
+  {
+    "m_name": "Counter Enhancement 1",
+    "node_id": "adventure_counter_enhancement_1",
+    "display_name": "Counter Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Counter_Enhancement",
+    "icon_file": "\\icons\\adventure_counter_enhancement_1.png"
+  },
+  {
+    "m_name": "Crit Enhancement 1",
+    "node_id": "adventure_crit_enhancement_1",
+    "display_name": "Crit Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "red"
+    ],
+    "icon_sprite_name": "Crit_Enhancement",
+    "icon_file": "\\icons\\adventure_crit_enhancement_1.png"
+  },
+  {
+    "m_name": "Damage Reduction Enhancement 1",
+    "node_id": "adventure_dmgreduct_enhancement_1",
+    "display_name": "Damage Reduction Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "cyan"
+    ],
+    "icon_sprite_name": "Damage_Reduction_Enhancement",
+    "icon_file": "\\icons\\adventure_dmgreduct_enhancement_1.png"
+  },
+  {
+    "m_name": "Enraged Enhancement 1",
+    "node_id": "adventure_enraged_enhancement_1",
+    "display_name": "Enraged Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "red"
+    ],
+    "icon_sprite_name": "Enraged_Enhancement",
+    "icon_file": "\\icons\\adventure_enraged_enhancement_1.png"
+  },
+  {
+    "m_name": "Fire Enhancement 1",
+    "node_id": "adventure_fire_enhancement_1",
+    "display_name": "Fire Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Fire_Enhancement",
+    "icon_file": "\\icons\\adventure_fire_enhancement_1.png"
+  },
+  {
+    "m_name": "Fire Enhancement 2",
+    "node_id": "adventure_fire_enhancement_2",
+    "display_name": "Fire Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Fire_Enhancement",
+    "icon_file": "\\icons\\adventure_fire_enhancement_2.png"
+  },
+  {
+    "m_name": "General Enhancement 1",
+    "node_id": "adventure_general_enhancement_1",
+    "display_name": "General Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "yellow"
+    ],
+    "icon_sprite_name": "General_Enhancement",
+    "icon_file": "\\icons\\adventure_general_enhancement_1.png"
+  },
+  {
+    "m_name": "General Enhancement 2",
+    "node_id": "adventure_general_enhancement_2",
+    "display_name": "General Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "yellow"
+    ],
+    "icon_sprite_name": "General_Enhancement",
+    "icon_file": "\\icons\\adventure_general_enhancement_2.png"
+  },
+  {
+    "m_name": "General Enhancement 3",
+    "node_id": "adventure_general_enhancement_3",
+    "display_name": "General Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "yellow"
+    ],
+    "icon_sprite_name": "General_Enhancement",
+    "icon_file": "\\icons\\adventure_general_enhancement_3.png"
+  },
+  {
+    "m_name": "General Enhancement 4",
+    "node_id": "adventure_general_enhancement_4",
+    "display_name": "General Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "yellow"
+    ],
+    "icon_sprite_name": "General_Enhancement",
+    "icon_file": "\\icons\\adventure_general_enhancement_4.png"
+  },
+  {
+    "m_name": "Heals Enhancement 1",
+    "node_id": "adventure_heals_enhancement_1",
+    "display_name": "Healing Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "green"
+    ],
+    "icon_sprite_name": "Heals_Enhancement",
+    "icon_file": "\\icons\\adventure_heals_enhancement_1.png"
+  },
+  {
+    "m_name": "Ice Enhancement 1",
+    "node_id": "adventure_ice_enhancement_1",
+    "display_name": "Ice Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "cyan"
+    ],
+    "icon_sprite_name": "Ice_Enhancement",
+    "icon_file": "\\icons\\adventure_ice_enhancement_1.png"
+  },
+  {
+    "m_name": "Ice Enhancement 2",
+    "node_id": "adventure_ice_enhancement_2",
+    "display_name": "Ice Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "cyan"
+    ],
+    "icon_sprite_name": "Ice_Enhancement",
+    "icon_file": "\\icons\\adventure_ice_enhancement_2.png"
+  },
+  {
+    "m_name": "Lightning Enhancement 1",
+    "node_id": "adventure_lightning_enhancement_1",
+    "display_name": "Lightning Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "yellow"
+    ],
+    "icon_sprite_name": "Lightning_Enhancement",
+    "icon_file": "\\icons\\adventure_lightning_enhancement_1.png"
+  },
+  {
+    "m_name": "Lightning Enhancement 2",
+    "node_id": "adventure_lightning_enhancement_2",
+    "display_name": "Lightning Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "yellow"
+    ],
+    "icon_sprite_name": "Lightning_Enhancement",
+    "icon_file": "\\icons\\adventure_lightning_enhancement_2.png"
+  },
+  {
+    "m_name": "Pets Enhancement 1",
+    "node_id": "adventure_pets_enhancement_1",
+    "display_name": "Pets Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "green"
+    ],
+    "icon_sprite_name": "Pet_Enhancement",
+    "icon_file": "\\icons\\adventure_pets_enhancement_1.png"
+  },
+  {
+    "m_name": "Poison Enhancement 1",
+    "node_id": "adventure_poison_enhancement_1",
+    "display_name": "Poison Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "purple"
+    ],
+    "icon_sprite_name": "Poison_Enhancement",
+    "icon_file": "\\icons\\adventure_poison_enhancement_1.png"
+  },
+  {
+    "m_name": "Poison Enhancement 2",
+    "node_id": "adventure_poison_enhancement_2",
+    "display_name": "Poison Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "purple"
+    ],
+    "icon_sprite_name": "Poison_Enhancement",
+    "icon_file": "\\icons\\adventure_poison_enhancement_2.png"
+  },
+  {
+    "m_name": "Shields Enhancement 1",
+    "node_id": "adventure_shields_enhancement_1",
+    "display_name": "Shields Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "cyan"
+    ],
+    "icon_sprite_name": "Shields_Enhancement",
+    "icon_file": "\\icons\\adventure_shields_enhancement_1.png"
+  },
+  {
+    "m_name": "Shuriken Enhancement 1",
+    "node_id": "adventure_shuriken_enhancement_1",
+    "display_name": "Shuriken Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "red"
+    ],
+    "icon_sprite_name": "Shuriken_Enhancement",
+    "icon_file": "\\icons\\adventure_shuriken_enhancement_1.png"
+  },
+  {
+    "m_name": "Shuriken Enhancement 2",
+    "node_id": "adventure_shuriken_enhancement_2",
+    "display_name": "Shuriken Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "red"
+    ],
+    "icon_sprite_name": "Shuriken_Enhancement",
+    "icon_file": "\\icons\\adventure_shuriken_enhancement_2.png"
+  },
+  {
+    "m_name": "Status Enhancement 1",
+    "node_id": "adventure_status_enhancement_1",
+    "display_name": "Status Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "purple"
+    ],
+    "icon_sprite_name": "Status_Enhancement",
+    "icon_file": "\\icons\\adventure_status_enhancement_1.png"
+  },
+  {
+    "m_name": "Warrior Enhancement 1",
+    "node_id": "adventure_warrior_enhancement_1",
+    "display_name": "Warrior Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "red"
+    ],
+    "icon_sprite_name": "Warrior_Enhancement",
+    "icon_file": "\\icons\\adventure_warrior_enhancement_1.png"
+  },
+  {
+    "m_name": "Wizard Enhancement 1",
+    "node_id": "adventure_wizard_enhancement_1",
+    "display_name": "Wizard Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "blue"
+    ],
+    "icon_sprite_name": "Wizard_Enhancement",
+    "icon_file": "\\icons\\adventure_wizard_enhancement_1.png"
+  },
+  {
+    "m_name": "Wound Enhancement 1",
+    "node_id": "adventure_wound_enhancement_1",
+    "display_name": "Wound Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "red"
+    ],
+    "icon_sprite_name": "Wound_Enhancement",
+    "icon_file": "\\icons\\adventure_wound_enhancement_1.png"
+  },
+  {
+    "m_name": "Wound Enhancement 2",
+    "node_id": "adventure_wound_enhancement_2",
+    "display_name": "Wound Enhancement",
+    "description": "",
+    "level_values": [],
+    "tail_labels": [
+      "red"
+    ],
+    "icon_sprite_name": "Wound_Enhancement",
+    "icon_file": "\\icons\\adventure_wound_enhancement_2.png"
+  },
+  {
+    "m_name": "Small ATK Buff",
+    "node_id": "small_atk_buff",
+    "display_name": "Attack Enhancement",
+    "description": "",
+    "level_values": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0
+    ],
+    "tail_labels": [
+      "yellow"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\small_atk_buff.png"
+  },
+  {
+    "m_name": "Small DEF Buff",
+    "node_id": "small_def_buff",
+    "display_name": "Defense Enhancement",
+    "description": "",
+    "level_values": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0
+    ],
+    "tail_labels": [
+      "cyan"
+    ],
+    "icon_sprite_name": "Small_DEF_Buff",
+    "icon_file": "\\icons\\small_def_buff.png"
+  },
+  {
+    "m_name": "Small HP Buff",
+    "node_id": "small_hp_buff",
+    "display_name": "Health Enhancement",
+    "description": "",
+    "level_values": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0
+    ],
+    "tail_labels": [
+      "green"
+    ],
+    "icon_sprite_name": "Small_HP_Buff",
+    "icon_file": "\\icons\\small_hp_buff.png"
+  },
+  {
+    "m_name": "Aurora DMG",
+    "node_id": "spec_aurora_dmg",
+    "display_name": "Aurora DMG",
+    "description": "Increases Aurora damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_aurora_dmg.png",
+    "specialization_icon_sprite_name": "Mount_4_Icon",
+    "specialization_icon_file": "\\icons\\spec_aurora_dmg__special.png"
+  },
+  {
+    "m_name": "Aurora HP",
+    "node_id": "spec_aurora_hp",
+    "display_name": "Aurora HP",
+    "description": "Increases Aurora HP by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "green"
+    ],
+    "icon_sprite_name": "Small_HP_Buff",
+    "icon_file": "\\icons\\spec_aurora_hp.png",
+    "specialization_icon_sprite_name": "Mount_4_Icon",
+    "specialization_icon_file": "\\icons\\spec_aurora_hp__special.png"
+  },
+  {
+    "m_name": "Emperor Crimson DMG",
+    "node_id": "spec_blades_sentinel_dmg",
+    "display_name": "Emperor Crimson DMG",
+    "description": "Increases Emperor Crimson damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_blades_sentinel_dmg.png",
+    "specialization_icon_sprite_name": "sentinel_wound",
+    "specialization_icon_file": "\\icons\\spec_blades_sentinel_dmg__special.png"
+  },
+  {
+    "m_name": "Blazewing Pet DMG",
+    "node_id": "spec_blazewing_pet_dmg",
+    "display_name": "Blazewing Pet DMG",
+    "description": "Increases Blazewing damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_blazewing_pet_dmg.png",
+    "specialization_icon_sprite_name": "Blazewing_Sprite",
+    "specialization_icon_file": "\\icons\\spec_blazewing_pet_dmg__special.png"
+  },
+  {
+    "m_name": "Boneclaw Pet DMG",
+    "node_id": "spec_boneclaw_pet_dmg",
+    "display_name": "Boneclaw Pet DMG",
+    "description": "Increases Boneclaw damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_boneclaw_pet_dmg.png",
+    "specialization_icon_sprite_name": "Boneclaw_Sprite",
+    "specialization_icon_file": "\\icons\\spec_boneclaw_pet_dmg__special.png"
+  },
+  {
+    "m_name": "Bramblemaw DMG",
+    "node_id": "spec_bramblemaw_dmg",
+    "display_name": "Bramblemaw DMG",
+    "description": "Increases Bramblemaw damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_bramblemaw_dmg.png",
+    "specialization_icon_sprite_name": "Mount_2_Icon",
+    "specialization_icon_file": "\\icons\\spec_bramblemaw_dmg__special.png"
+  },
+  {
+    "m_name": "Bramblemaw HP",
+    "node_id": "spec_bramblemaw_hp",
+    "display_name": "Bramblemaw HP",
+    "description": "Increases Bramblemaw HP by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "green"
+    ],
+    "icon_sprite_name": "Small_HP_Buff",
+    "icon_file": "\\icons\\spec_bramblemaw_hp.png",
+    "specialization_icon_sprite_name": "Mount_2_Icon",
+    "specialization_icon_file": "\\icons\\spec_bramblemaw_hp__special.png"
+  },
+  {
+    "m_name": "Castlepod Pet DMG",
+    "node_id": "spec_castlepod_pet_dmg",
+    "display_name": "Castlepod Pet DMG",
+    "description": "Increases Castlepod damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_castlepod_pet_dmg.png",
+    "specialization_icon_sprite_name": "Warrior_Legend_Sprite",
+    "specialization_icon_file": "\\icons\\spec_castlepod_pet_dmg__special.png"
+  },
+  {
+    "m_name": "Dino DMG",
+    "node_id": "spec_dino_dmg",
+    "display_name": "Dino DMG",
+    "description": "Increases Dino damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_dino_dmg.png",
+    "specialization_icon_sprite_name": "Mount_1_Icon",
+    "specialization_icon_file": "\\icons\\spec_dino_dmg__special.png"
+  },
+  {
+    "m_name": "Dino HP",
+    "node_id": "spec_dino_hp",
+    "display_name": "Dino HP",
+    "description": "Increases Dino HP by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "green"
+    ],
+    "icon_sprite_name": "Small_HP_Buff",
+    "icon_file": "\\icons\\spec_dino_hp.png",
+    "specialization_icon_sprite_name": "Mount_1_Icon",
+    "specialization_icon_file": "\\icons\\spec_dino_hp__special.png"
+  },
+  {
+    "m_name": "DMG Reduction against Heroes",
+    "node_id": "spec_dmg_reduction_heroes",
+    "display_name": "DMG Reduction against Heroes",
+    "description": "Reduces damage taken from heroes by 3-30%",
+    "level_values": [
+      3.0,
+      6.0,
+      9.0,
+      12.0,
+      15.0,
+      18.0,
+      21.0,
+      24.0,
+      27.0,
+      30.0
+    ],
+    "tail_labels": [
+      "blue"
+    ],
+    "icon_sprite_name": "PvP_Enhancement",
+    "icon_file": "\\icons\\spec_dmg_reduction_heroes.png"
+  },
+  {
+    "m_name": "DMG Reduction While Mounted",
+    "node_id": "spec_dmg_reduction_mounted",
+    "display_name": "DMG Reduction While Mounted",
+    "description": "Increases damage reduction while mounted by 1-10%",
+    "level_values": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0
+    ],
+    "tail_labels": [
+      "blue"
+    ],
+    "icon_sprite_name": "Mounts_Enhancement",
+    "icon_file": "\\icons\\spec_dmg_reduction_mounted.png"
+  },
+  {
+    "m_name": "DMG Reduction against Pets",
+    "node_id": "spec_dmg_reduction_pets",
+    "display_name": "DMG Reduction against Pets",
+    "description": "Reduces damage taken from pets by 3-30%",
+    "level_values": [
+      3.0,
+      6.0,
+      9.0,
+      12.0,
+      15.0,
+      18.0,
+      21.0,
+      24.0,
+      27.0,
+      30.0
+    ],
+    "tail_labels": [
+      "blue"
+    ],
+    "icon_sprite_name": "PvP_Enhancement",
+    "icon_file": "\\icons\\spec_dmg_reduction_pets.png"
+  },
+  {
+    "m_name": "DMG Reduction against Sentinels",
+    "node_id": "spec_dmg_reduction_sentinels",
+    "display_name": "DMG Reduction against Sentinels",
+    "description": "Reduces damage taken from sentinels by 3-30%",
+    "level_values": [
+      3.0,
+      6.0,
+      9.0,
+      12.0,
+      15.0,
+      18.0,
+      21.0,
+      24.0,
+      27.0,
+      30.0
+    ],
+    "tail_labels": [
+      "blue"
+    ],
+    "icon_sprite_name": "PvP_Enhancement",
+    "icon_file": "\\icons\\spec_dmg_reduction_sentinels.png"
+  },
+  {
+    "m_name": "Epic Pet DMG",
+    "node_id": "spec_epic_pet_dmg",
+    "display_name": "Epic Pet DMG",
+    "description": "Increases epic pet damage by 1-10%",
+    "level_values": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Pets_Enhancement",
+    "icon_file": "\\icons\\spec_epic_pet_dmg.png"
+  },
+  {
+    "m_name": "Hellfire Drake DMG",
+    "node_id": "spec_fire_sentinel_dmg",
+    "display_name": "Hellfire Drake DMG",
+    "description": "Increases Hellfire Drake damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_fire_sentinel_dmg.png",
+    "specialization_icon_sprite_name": "sentinel_fire",
+    "specialization_icon_file": "\\icons\\spec_fire_sentinel_dmg__special.png"
+  },
+  {
+    "m_name": "Flux Pet DMG",
+    "node_id": "spec_flux_pet_dmg",
+    "display_name": "Flux Pet DMG",
+    "description": "Increases Flux damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_flux_pet_dmg.png",
+    "specialization_icon_sprite_name": "Flux_Sprite",
+    "specialization_icon_file": "\\icons\\spec_flux_pet_dmg__special.png"
+  },
+  {
+    "m_name": "Frostpaw Pet DMG",
+    "node_id": "spec_frostpaw_pet_dmg",
+    "display_name": "Frostpaw Pet DMG",
+    "description": "Increases Frostpaw damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_frostpaw_pet_dmg.png",
+    "specialization_icon_sprite_name": "Frostpaw_Sprite",
+    "specialization_icon_file": "\\icons\\spec_frostpaw_pet_dmg__special.png"
+  },
+  {
+    "m_name": "Glacidrake Pet DMG",
+    "node_id": "spec_glacidrake_pet_dmg",
+    "display_name": "Glacidrake Pet DMG",
+    "description": "Increases Glacidrake damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_glacidrake_pet_dmg.png",
+    "specialization_icon_sprite_name": "Glacidrake_Sprite",
+    "specialization_icon_file": "\\icons\\spec_glacidrake_pet_dmg__special.png"
+  },
+  {
+    "m_name": "Permafrost Titan DMG",
+    "node_id": "spec_ice_sentinel_dmg",
+    "display_name": "Permafrost Titan DMG",
+    "description": "Increases Permafrost Titan damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_ice_sentinel_dmg.png",
+    "specialization_icon_sprite_name": "sentinel_ice",
+    "specialization_icon_file": "\\icons\\spec_ice_sentinel_dmg__special.png"
+  },
+  {
+    "m_name": "Legendary Pet DMG",
+    "node_id": "spec_legendary_pet_dmg",
+    "display_name": "Legendary Pet DMG",
+    "description": "Increases legendary pet damage by 1-10%",
+    "level_values": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Pets_Enhancement",
+    "icon_file": "\\icons\\spec_legendary_pet_dmg.png"
+  },
+  {
+    "m_name": "Thunderbringer DMG",
+    "node_id": "spec_lightning_sentinel_dmg",
+    "display_name": "Thunderbringer DMG",
+    "description": "Increases Thunderbringer damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_lightning_sentinel_dmg.png",
+    "specialization_icon_sprite_name": "sentinel_lightening",
+    "specialization_icon_file": "\\icons\\spec_lightning_sentinel_dmg__special.png"
+  },
+  {
+    "m_name": "Mount HP",
+    "node_id": "spec_mount_hp",
+    "display_name": "Mount HP",
+    "description": "Increases mount HP by 1-10%",
+    "level_values": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0
+    ],
+    "tail_labels": [
+      "green"
+    ],
+    "icon_sprite_name": "Mounts_Enhancement",
+    "icon_file": "\\icons\\spec_mount_hp.png"
+  },
+  {
+    "m_name": "Mythic Pet DMG",
+    "node_id": "spec_mythic_pet_dmg",
+    "display_name": "Mythic Pet DMG",
+    "description": "Increases mythic pet damage by 1-10%",
+    "level_values": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Pets_Enhancement",
+    "icon_file": "\\icons\\spec_mythic_pet_dmg.png"
+  },
+  {
+    "m_name": "Neklaw Pet DMG",
+    "node_id": "spec_neklaw_pet_dmg",
+    "display_name": "Neklaw Pet DMG",
+    "description": "Increases Neklaw damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_neklaw_pet_dmg.png",
+    "specialization_icon_sprite_name": "Ninja_Mythic_Sprite",
+    "specialization_icon_file": "\\icons\\spec_neklaw_pet_dmg__special.png"
+  },
+  {
+    "m_name": "Noctibun Pet DMG",
+    "node_id": "spec_noctibun_pet_dmg",
+    "display_name": "Noctibun Pet DMG",
+    "description": "Increases Noctibun damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_noctibun_pet_dmg.png",
+    "specialization_icon_sprite_name": "Noctibun_Sprite",
+    "specialization_icon_file": "\\icons\\spec_noctibun_pet_dmg__special.png"
+  },
+  {
+    "m_name": "Pet DMG",
+    "node_id": "spec_pet_dmg",
+    "display_name": "Pet DMG",
+    "description": "Increases all pet damage by 1-10%",
+    "level_values": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Pets_Enhancement",
+    "icon_file": "\\icons\\spec_pet_dmg.png"
+  },
+  {
+    "m_name": "PvP ATK",
+    "node_id": "spec_pvp_atk",
+    "display_name": "PvP ATK",
+    "description": "Increases ATK in PvP by 3-30%",
+    "level_values": [
+      3.0,
+      6.0,
+      9.0,
+      12.0,
+      15.0,
+      18.0,
+      21.0,
+      24.0,
+      27.0,
+      30.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_pvp_atk.png"
+  },
+  {
+    "m_name": "PvP DEF",
+    "node_id": "spec_pvp_def",
+    "display_name": "PvP DEF",
+    "description": "Increases DEF in PvP by 3-30%",
+    "level_values": [
+      3.0,
+      6.0,
+      9.0,
+      12.0,
+      15.0,
+      18.0,
+      21.0,
+      24.0,
+      27.0,
+      30.0
+    ],
+    "tail_labels": [
+      "grey"
+    ],
+    "icon_sprite_name": "Small_DEF_Buff",
+    "icon_file": "\\icons\\spec_pvp_def.png"
+  },
+  {
+    "m_name": "PvP DMG Reduction",
+    "node_id": "spec_pvp_dmg_reduction",
+    "display_name": "PvP DMG Reduction",
+    "description": "Reduces all damage taken in PvP by 3-30%",
+    "level_values": [
+      3.0,
+      6.0,
+      9.0,
+      12.0,
+      15.0,
+      18.0,
+      21.0,
+      24.0,
+      27.0,
+      30.0
+    ],
+    "tail_labels": [
+      "blue"
+    ],
+    "icon_sprite_name": "PvP_Enhancement",
+    "icon_file": "\\icons\\spec_pvp_dmg_reduction.png"
+  },
+  {
+    "m_name": "PvP HP",
+    "node_id": "spec_pvp_hp",
+    "display_name": "PvP HP",
+    "description": "Increases HP in PvP by 3-30%",
+    "level_values": [
+      3.0,
+      6.0,
+      9.0,
+      12.0,
+      15.0,
+      18.0,
+      21.0,
+      24.0,
+      27.0,
+      30.0
+    ],
+    "tail_labels": [
+      "green"
+    ],
+    "icon_sprite_name": "Small_HP_Buff",
+    "icon_file": "\\icons\\spec_pvp_hp.png"
+  },
+  {
+    "m_name": "Pyrehorn Pet DMG",
+    "node_id": "spec_pyrehorn_pet_dmg",
+    "display_name": "Pyrehorn Pet DMG",
+    "description": "Increases Pyrehorn damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_pyrehorn_pet_dmg.png",
+    "specialization_icon_sprite_name": "Pyrehorn_Sprite",
+    "specialization_icon_file": "\\icons\\spec_pyrehorn_pet_dmg__special.png"
+  },
+  {
+    "m_name": "Reduce Enemy Crit DMG",
+    "node_id": "spec_reduce_enemy_crit_dmg",
+    "display_name": "Reduce Enemy Crit DMG",
+    "description": "Reduces enemy critical damage by 1-10%",
+    "level_values": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0
+    ],
+    "tail_labels": [
+      "yellow"
+    ],
+    "icon_sprite_name": "Damage_Reduction_Enhancement",
+    "icon_file": "\\icons\\spec_reduce_enemy_crit_dmg.png"
+  },
+  {
+    "m_name": "Sentinel DMG",
+    "node_id": "spec_sentinel_dmg",
+    "display_name": "Sentinel DMG",
+    "description": "Increases all sentinel damage by 1-10%",
+    "level_values": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Sentinel_Enhancement",
+    "icon_file": "\\icons\\spec_sentinel_dmg.png"
+  },
+  {
+    "m_name": "Shroomurk Pet DMG",
+    "node_id": "spec_shroomurk_pet_dmg",
+    "display_name": "Shroomurk Pet DMG",
+    "description": "Increases Shroomurk damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_shroomurk_pet_dmg.png",
+    "specialization_icon_sprite_name": "Shroomurk_Sprite",
+    "specialization_icon_file": "\\icons\\spec_shroomurk_pet_dmg__special.png"
+  },
+  {
+    "m_name": "Spore Pet DMG",
+    "node_id": "spec_spore_pet_dmg",
+    "display_name": "Spore Pet DMG",
+    "description": "Increases Spore damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_spore_pet_dmg.png",
+    "specialization_icon_sprite_name": "Spore_Sprite",
+    "specialization_icon_file": "\\icons\\spec_spore_pet_dmg__special.png"
+  },
+  {
+    "m_name": "Stone Sentinel DMG",
+    "node_id": "spec_stone_sentinel_dmg",
+    "display_name": "Stone Sentinel DMG",
+    "description": "Increases Stone Sentinel damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_stone_sentinel_dmg.png",
+    "specialization_icon_sprite_name": "sentinel_rock",
+    "specialization_icon_file": "\\icons\\spec_stone_sentinel_dmg__special.png"
+  },
+  {
+    "m_name": "Ultimania Codex DMG",
+    "node_id": "spec_ultimania_dmg",
+    "display_name": "Ultimania Codex DMG",
+    "description": "Increases Ultimania Codex damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_ultimania_dmg.png",
+    "specialization_icon_sprite_name": "Mount_3_Icon",
+    "specialization_icon_file": "\\icons\\spec_ultimania_dmg__special.png"
+  },
+  {
+    "m_name": "Ultimania Codex HP",
+    "node_id": "spec_ultimania_hp",
+    "display_name": "Ultimania Codex HP",
+    "description": "Increases Ultimania Codex HP by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "green"
+    ],
+    "icon_sprite_name": "Small_HP_Buff",
+    "icon_file": "\\icons\\spec_ultimania_hp.png",
+    "specialization_icon_sprite_name": "Mount_3_Icon",
+    "specialization_icon_file": "\\icons\\spec_ultimania_hp__special.png"
+  },
+  {
+    "m_name": "Voltrix Pet DMG",
+    "node_id": "spec_voltrix_pet_dmg",
+    "display_name": "Voltrix Pet DMG",
+    "description": "Increases Voltrix damage by 2-20%",
+    "level_values": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0
+    ],
+    "tail_labels": [
+      "orange"
+    ],
+    "icon_sprite_name": "Small_ATK_Buff",
+    "icon_file": "\\icons\\spec_voltrix_pet_dmg.png",
+    "specialization_icon_sprite_name": "Voltrix_Sprite",
+    "specialization_icon_file": "\\icons\\spec_voltrix_pet_dmg__special.png"
+  }
+]

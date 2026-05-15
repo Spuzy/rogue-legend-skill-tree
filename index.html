@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rogue Legend Skill Tree Simulator</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="topbar">
+    <div class="brand">
+      <div class="tree-label" id="tree-label">Adventure</div>
+      <div class="subtitle">Skill Tree Simulator</div>
+    </div>
+
+    <div class="topbar-card cost-card" title="Cumulative cost to bring every node in this tree from current → planned">
+      <div class="topbar-card-title">
+        Cost <span class="side-sub" id="cost-tree-name">Adventure</span><span class="side-sub gpm" id="cost-gpm"></span>
+      </div>
+      <div class="topbar-stats">
+        <span class="tb-stat"><span class="ico" id="stat-cost-ico"></span><b id="stat-books">0</b><em id="stat-cost-lbl">currency</em></span>
+        <span class="tb-stat"><span class="ico ico-gem"></span><b id="stat-gems">0</b><em>gems</em></span>
+        <span class="tb-stat"><span class="ico ico-clock"></span><b id="stat-time">0m</b><em id="stat-time-sub">0m before ads</em></span>
+      </div>
+    </div>
+
+    <div class="topbar-card filter-card">
+      <div class="topbar-card-title">Budget filter</div>
+      <div class="topbar-filter">
+        <label class="toggle"><input type="checkbox" id="filter-toggle"><span>On</span></label>
+        <label class="toggle" title="Accumulative: highlight if the total cost from current level fits the budget. Off: highlight any single level whose own cost fits."><input type="checkbox" id="filter-accumulative" checked><span>Accum.</span></label>
+        <label class="tb-num"><span class="ico ico-book"></span><input type="number" id="filter-books" min="0" step="100" placeholder="books"></label>
+        <label class="tb-num"><span class="ico ico-gem"></span><input type="number" id="filter-gems" min="0" step="50" placeholder="gems"></label>
+      </div>
+    </div>
+
+    <div class="topbar-spacer"></div>
+    <div class="topbar-search" title="Highlights every node whose name contains the typed text">
+      <span class="ico ico-search">⌕</span>
+      <input type="text" id="search-input" placeholder="Search nodes…" autocomplete="off">
+      <button id="search-clear" type="button" title="Clear search" hidden>×</button>
+    </div>
+    <div class="topbar-actions">
+      <button id="set-filtered-btn" title="Set every unlocked node in the active tree to the highest level its budget allows" hidden>Set Filtered</button>
+      <button id="set-planned-btn" title="Promote every planned level in the active tree to current">Set Planned</button>
+      <button id="reset-btn" class="danger" title="Clear all current levels and plans in the active tree (filter is preserved)">Reset</button>
+    </div>
+  </header>
+
+  <main id="stage">
+    <svg id="canvas" xmlns="http://www.w3.org/2000/svg"></svg>
+    <aside id="popup"></aside>
+
+    <aside id="sidebar">
+      <section class="side-card" title="Totals tracked across BOTH trees. Click ▾ for the per-pet / sentinel / mount / PvP breakdown.">
+        <div class="side-title">
+          Totals <span class="side-sub">both trees</span>
+          <button id="totals-expand" class="expand-btn" type="button" aria-expanded="false" title="Show detailed breakdown">▾</button>
+        </div>
+        <div class="totals">
+          <div class="total-row total-hp"><span class="total-lbl">HP</span><span class="total-val" id="total-hp">+0%</span></div>
+          <div class="total-row total-atk"><span class="total-lbl">ATK</span><span class="total-val" id="total-atk">+0%</span></div>
+          <div class="total-row total-def"><span class="total-lbl">DEF</span><span class="total-val" id="total-def">+0%</span></div>
+          <div class="total-row total-adv">
+            <span class="total-lbl"><span class="ico ico-adv"></span> Adventure</span>
+            <span class="total-val" id="total-adv-spent">0</span>
+          </div>
+          <div class="total-row total-spec">
+            <span class="total-lbl"><span class="ico ico-spec"></span> Specialization</span>
+            <span class="total-val" id="total-spec-spent">0</span>
+          </div>
+        </div>
+        <div class="totals-detail" id="totals-detail"></div>
+      </section>
+    </aside>
+  </main>
+
+  <nav id="tabs">
+    <button data-tree="adventure" class="active">
+      <span class="tab-ico tab-ico-adventure"></span>
+      Adventure
+    </button>
+    <button data-tree="specialization">
+      <span class="tab-ico tab-ico-spec"></span>
+      Specialization
+    </button>
+  </nav>
+
+  <div id="boot-error" style="display:none;position:fixed;top:60px;left:50%;transform:translateX(-50%);background:#5a2030;color:#ffe;padding:14px 22px;border:1px solid #8a3040;border-radius:8px;z-index:1000;max-width:680px;font-family:Segoe UI,sans-serif;line-height:1.45"></div>
+  <script>
+    // Detect file:// load — ES modules + images fail under file:// in Chrome/Edge.
+    if (location.protocol === 'file:') {
+      var b = document.getElementById('boot-error');
+      b.style.display = 'block';
+      b.innerHTML = '<b>Open via the local server, not by double-clicking the file.</b><br>' +
+        'Run <code>serve.bat</code> (or <code>py -m http.server 8000</code>) and open ' +
+        '<a style="color:#9df" href="http://localhost:8000/">http://localhost:8000/</a>.<br>' +
+        'Browsers block ES modules and local images over <code>file://</code>.';
+    }
+    // Catch any uncaught script errors and surface them.
+    window.addEventListener('error', function (e) {
+      var b = document.getElementById('boot-error');
+      b.style.display = 'block';
+      b.innerHTML = '<b>Script error:</b> ' + (e.message || e.error) +
+        '<br><small>' + (e.filename || '') + ':' + (e.lineno || '') + '</small>';
+    });
+    // If init never runs within 3s, complain.
+    window.addEventListener('DOMContentLoaded', function () {
+      setTimeout(function () {
+        if (!window.__rl_booted) {
+          var b = document.getElementById('boot-error');
+          if (b.style.display === 'none') {
+            b.style.display = 'block';
+            b.innerHTML = '<b>App did not initialize.</b> Check the browser console (F12). ' +
+              'Most common cause: opening via <code>file://</code> — use <code>serve.bat</code> instead.';
+          }
+        }
+      }, 3000);
+    });
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

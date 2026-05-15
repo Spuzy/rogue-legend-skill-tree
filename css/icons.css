@@ -1,0 +1,18 @@
+/* Inline icons (sprite + emoji). Image paths point at the bundled
+ * skilltree_0471/ asset dump; if that folder is renamed, update here.
+ */
+
+.ico {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 1.2em; height: 1.2em;
+  vertical-align: middle;
+  font-style: normal; line-height: 1;
+  background-repeat: no-repeat; background-position: center; background-size: contain;
+}
+.ico-adv  { background-image: url('../skilltree_0471/icons/sharedassets0.assets__79004__1323.png'); }
+.ico-spec { background-image: url('../skilltree_0471/icons/sharedassets0.assets__79004__1406.png'); }
+.ico-gem  { background-image: url('../skilltree_0471/icons/sharedassets0.assets__79004__1336.png'); }
+/* Legacy alias used by the budget input — same art as Adventure currency. */
+.ico-book { background-image: url('../skilltree_0471/icons/sharedassets0.assets__79004__1323.png'); }
+.ico-clock::before { content: '⏱'; }

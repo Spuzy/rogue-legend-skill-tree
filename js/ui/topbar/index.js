@@ -1,0 +1,195 @@
+// Top bar + right sidebar: tree label, reset button, per-tree cost prediction,
+// budget filter, and cross-tree totals (ATK/DEF/HP %, total books spent).
+
+import { TREES } from '../../core/data.js';
+import { state, getCurrent, getPlanned, setCurrent, setFilter, setActiveTree, resetTree, setSearch } from '../../core/state.js';
+import { rangeCost, formatNumber, formatMinutes, maxAffordableLevel } from '../../core/cost.js';
+import { computeTotals } from '../../core/stats.js';
+import { confirmModal } from '../modal.js';
+import { isLocked } from '../../core/graph.js';
+import { renderTotalsDetail } from './totalsDetail.js';
+
+let elements;
+let totalsExpanded = false;
+
+export function initTopbar(opts) {
+  elements = opts;
+
+  // Tab clicks
+  elements.tabs.querySelectorAll('button[data-tree]').forEach(btn => {
+    btn.addEventListener('click', () => setActiveTree(btn.dataset.tree));
+  });
+
+  const sync = () => {
+    elements.filterBooks.value = state.filter.books || 0;
+    elements.filterGems.value  = state.filter.gems || 0;
+    elements.filterToggle.checked = !!state.filter.active;
+    if (elements.filterAccumulative) elements.filterAccumulative.checked = state.filter.accumulative !== false;
+  };
+  sync();
+
+  elements.filterBooks.addEventListener('input', () => setFilter({ books: Math.max(0, Number(elements.filterBooks.value) || 0) }));
+  elements.filterGems.addEventListener('input',  () => setFilter({ gems:  Math.max(0, Number(elements.filterGems.value)  || 0) }));
+  elements.filterToggle.addEventListener('change', () => setFilter({ active: elements.filterToggle.checked }));
+  if (elements.filterAccumulative) {
+    elements.filterAccumulative.addEventListener('change', () => setFilter({ accumulative: elements.filterAccumulative.checked }));
+  }
+
+  if (elements.searchInput) {
+    elements.searchInput.value = state.search || '';
+    if (elements.searchClear) elements.searchClear.hidden = !elements.searchInput.value;
+    elements.searchInput.addEventListener('input', () => {
+      setSearch(elements.searchInput.value);
+      if (elements.searchClear) elements.searchClear.hidden = !elements.searchInput.value;
+    });
+    elements.searchInput.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        elements.searchInput.value = '';
+        setSearch('');
+        if (elements.searchClear) elements.searchClear.hidden = true;
+      }
+    });
+  }
+  if (elements.searchClear) {
+    elements.searchClear.addEventListener('click', () => {
+      if (elements.searchInput) elements.searchInput.value = '';
+      setSearch('');
+      elements.searchClear.hidden = true;
+      if (elements.searchInput) elements.searchInput.focus();
+    });
+  }
+
+  elements.resetBtn.addEventListener('click', async () => {
+    const treeId = state.activeTree;
+    const treeName = TREES[treeId]?.label || treeId;
+    const ok = await confirmModal({
+      title: `Reset ${treeName} tree`,
+      message: `This clears every current level and plan in the ${treeName} tree. Your budget filter is preserved. This cannot be undone.`,
+      confirmText: 'Reset',
+      cancelText: 'Cancel',
+      tone: 'danger',
+    });
+    if (ok) resetTree(treeId);
+  });
+
+  if (elements.setPlannedBtn) {
+    elements.setPlannedBtn.addEventListener('click', async () => {
+      const treeId = state.activeTree;
+      const tree = TREES[treeId];
+      const promotions = [];
+      for (const node of tree.nodes.values()) {
+        const cur = getCurrent(node.nodeId);
+        const planned = getPlanned(node.nodeId);
+        if (planned > cur) promotions.push({ node, from: cur, to: planned });
+      }
+      if (promotions.length === 0) return;
+      const ok = await confirmModal({
+        title: `Set planned in ${tree.label}`,
+        message: `Promote every planned level to current in the ${tree.label} tree (${promotions.length} node${promotions.length === 1 ? '' : 's'}):`,
+        items: promotions.map(p => `${p.node.displayName}  (Lv.${p.from} \u2192 ${p.to})`),
+        confirmText: 'Set planned',
+        cancelText: 'Cancel',
+      });
+      if (!ok) return;
+      for (const p of promotions) setCurrent(p.node, p.to);
+    });
+  }
+
+  if (elements.setFilteredBtn) {
+    elements.setFilteredBtn.addEventListener('click', async () => {
+      const treeId = state.activeTree;
+      const tree = TREES[treeId];
+      if (!state.filter.active) return;
+      const books = state.filter.books || 0;
+      const gems  = state.filter.gems  || 0;
+      const bumps = [];
+      for (const node of tree.nodes.values()) {
+        if (isLocked(tree, node)) continue;
+        const cur = getCurrent(node.nodeId);
+        if (cur >= node.maxLevel) continue;
+        const target = maxAffordableLevel(node, cur, books, gems);
+        if (target > cur) bumps.push({ node, from: cur, to: target });
+      }
+      if (bumps.length === 0) return;
+      const ok = await confirmModal({
+        title: `Set filtered in ${tree.label}`,
+        message: `Set every unlocked node to the highest level its budget allows (${bumps.length} node${bumps.length === 1 ? '' : 's'}):`,
+        items: bumps.map(b => `${b.node.displayName}  (Lv.${b.from} \u2192 ${b.to})`),
+        confirmText: 'Set filtered',
+        cancelText: 'Cancel',
+      });
+      if (!ok) return;
+      for (const b of bumps) setCurrent(b.node, b.to);
+    });
+  }
+
+  if (elements.totalsExpand) {
+    elements.totalsExpand.addEventListener('click', () => {
+      totalsExpanded = !totalsExpanded;
+      elements.totalsExpand.setAttribute('aria-expanded', String(totalsExpanded));
+      elements.totalsExpand.textContent = totalsExpanded ? '\u25B4' : '\u25BE';
+      if (elements.totalsDetail) {
+        elements.totalsDetail.classList.toggle('open', totalsExpanded);
+      }
+    });
+  }
+}
+
+// Detailed breakdown rendering (chips, ID→colour map, etc.) lives in
+// ./totalsDetail.js. We just call it from renderTopbar() below.
+
+export function renderTopbar() {
+  // Active tab styling
+  elements.tabs.querySelectorAll('button[data-tree]').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tree === state.activeTree);
+  });
+
+  // Cost prediction — active tree only
+  const tree = TREES[state.activeTree];
+  let books = 0, minutes = 0, paid = 0;
+  for (const node of tree.nodes.values()) {
+    const cur = state.current[node.nodeId] || 0;
+    const plan = Math.max(state.planned[node.nodeId] || 0, cur);
+    if (plan > cur) {
+      const r = rangeCost(node, cur, plan);
+      books += r.books;
+      minutes += r.minutes;
+      paid += r.paidMinutes;
+    }
+  }
+  const gems = Math.ceil(paid) * tree.gemsPerMin;
+  elements.statBooks.textContent = formatNumber(books);
+  elements.statGems.textContent  = formatNumber(gems);
+  // True time (after ads) is the headline; raw is the small subline.
+  elements.statTime.textContent  = formatMinutes(paid);
+  elements.statTimeSub.textContent = `${formatMinutes(minutes)} before ads`;
+  elements.treeLabel.textContent = tree.label;
+  if (elements.costTreeName) elements.costTreeName.textContent = tree.label;
+  if (elements.costGpm) elements.costGpm.textContent = `· 1 min = ${tree.gemsPerMin} gems`;
+
+  // Swap the cost-prediction currency icon to match the active tree.
+  if (elements.statCostIco) {
+    elements.statCostIco.className = 'ico ' + (tree.id === 'specialization' ? 'ico-spec' : 'ico-adv');
+  }
+  if (elements.statCostLbl) {
+    elements.statCostLbl.textContent = tree.id === 'specialization' ? 'spec. currency' : 'adv. currency';
+  }
+
+  // Keep filter inputs in sync (state can be mutated elsewhere e.g. on load).
+  if (document.activeElement !== elements.filterBooks) elements.filterBooks.value = state.filter.books || 0;
+  if (document.activeElement !== elements.filterGems)  elements.filterGems.value  = state.filter.gems  || 0;
+  elements.filterToggle.checked = !!state.filter.active;
+  if (elements.filterAccumulative) elements.filterAccumulative.checked = state.filter.accumulative !== false;
+  if (elements.setFilteredBtn) elements.setFilteredBtn.hidden = !state.filter.active;
+
+  // Cross-tree totals
+  const totals = computeTotals();
+  if (elements.totalAtk) elements.totalAtk.textContent = `+${totals.atk}%`;
+  if (elements.totalDef) elements.totalDef.textContent = `+${totals.def}%`;
+  if (elements.totalHp)  elements.totalHp.textContent  = `+${totals.hp}%`;
+  if (elements.totalAdvSpent)  elements.totalAdvSpent.textContent  = formatNumber(totals.advSpent);
+  if (elements.totalSpecSpent) elements.totalSpecSpent.textContent = formatNumber(totals.specSpent);
+
+  renderTotalsDetail(elements.totalsDetail);
+}
+

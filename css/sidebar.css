@@ -1,0 +1,110 @@
+/* Floating left sidebar — totals card with the optional grouped breakdown
+ * panel. Cards use a transparent backdrop so dragging the canvas through gaps
+ * still works.
+ */
+
+#sidebar {
+  position: absolute;
+  top: 14px; left: 14px;
+  width: 280px;
+  display: flex; flex-direction: column; gap: 10px;
+  z-index: 5;
+  pointer-events: none;
+}
+#sidebar .side-card {
+  pointer-events: auto;
+  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.45);
+}
+.side-title {
+  font-size: 11px; font-weight: 700; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.7px;
+  margin-bottom: 8px;
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+}
+.side-sub { color: var(--accent); font-size: 10px; font-weight: 600; }
+.side-sub.gpm { color: var(--gem); margin-left: 4px; }
+
+.stats { display: flex; flex-direction: column; gap: 6px; }
+.stat {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--bg-0); padding: 6px 10px; border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.stat-val { font-weight: 700; font-size: 15px; min-width: 40px; }
+.stat-lbl { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; flex: 1; text-align: right; }
+
+.filter { display: flex; flex-direction: column; gap: 6px; }
+.filter label { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+.filter input[type=number] { flex: 1; padding: 4px 6px; background: var(--bg-0); border: 1px solid var(--border); color: var(--text); border-radius: 4px; font-size: 13px; }
+.toggle { cursor: pointer; user-select: none; }
+.toggle input { margin: 0 4px 0 0; }
+
+/* High-level totals (ATK / DEF / HP / books per tree). */
+.totals { display: flex; flex-direction: column; gap: 4px; }
+.total-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 5px 9px; border-radius: 6px;
+  background: var(--bg-0); border: 1px solid var(--border);
+  font-size: 13px;
+}
+.total-row .total-lbl { color: var(--text-dim); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+.total-row .total-val { font-weight: 700; }
+.total-atk { border-left: 3px solid var(--atk); } .total-atk .total-val { color: var(--atk); }
+.total-def { border-left: 3px solid var(--def); } .total-def .total-val { color: var(--def); }
+.total-hp  { border-left: 3px solid var(--hp);  } .total-hp  .total-val { color: var(--hp); }
+.total-adv  { border-left: 3px solid var(--book); } .total-adv  .total-val { color: var(--book); }
+.total-spec { border-left: 3px solid var(--accent-2); } .total-spec .total-val { color: var(--accent-2); }
+
+/* Expand button + the grouped breakdown drawer it toggles. */
+.expand-btn {
+  background: var(--bg-3); color: var(--text); border: 1px solid var(--border);
+  width: 22px; height: 20px; border-radius: 4px; cursor: pointer;
+  font-size: 12px; line-height: 1; padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.expand-btn:hover { background: var(--bg-1); }
+.totals-detail {
+  display: none;
+  margin-top: 8px;
+  flex-direction: column; gap: 8px;
+  max-height: 56vh; overflow-y: auto;
+  padding-right: 2px;
+}
+.totals-detail.open { display: flex; }
+.td-group {
+  background: var(--bg-0);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+.td-group-title {
+  font-size: 10px; font-weight: 700; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 0.6px;
+  margin-bottom: 4px;
+}
+.td-sub {
+  font-size: 9px; font-weight: 600; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.5px;
+  margin: 4px 0 2px;
+}
+.td-chips { display: flex; flex-wrap: wrap; gap: 3px; }
+.td-chip {
+  display: inline-flex; align-items: baseline; gap: 4px;
+  background: var(--bg-1); border: 1px solid var(--border);
+  border-radius: 4px; padding: 2px 6px;
+  font-size: 11px;
+}
+.td-chip-name { color: var(--text-dim); }
+.td-chip-val  { color: #5ee08a; font-weight: 700; }
+.td-chip-solo {
+  display: flex; justify-content: space-between;
+  background: var(--bg-1); border: 1px solid var(--border);
+  border-radius: 4px; padding: 3px 8px;
+  font-size: 12px; margin-top: 2px;
+}
+.td-chip-solo .td-chip-name { color: var(--text); font-weight: 600; }
+.td-empty { font-size: 10px; color: var(--text-dim); font-style: italic; }

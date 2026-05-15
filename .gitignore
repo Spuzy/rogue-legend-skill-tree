@@ -1,0 +1,18 @@
+# Local backup snapshot — never published.
+backup/
+
+# Dev reference screenshots (WhatsApp shots, etc.) — not used at runtime.
+skilltree_0471/pictures/
+
+# Editor / OS noise
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Local-only scratch
+_*.png
+_*.html
+_*.json
+_*.log

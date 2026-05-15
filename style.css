@@ -1,0 +1,12 @@
+﻿/* Aggregator stylesheet — keep <link rel="stylesheet" href="style.css"> in
+ * index.html and edit the per-area files under css/ instead. Order matters:
+ * tokens must load first; modal last so it can override anything. */
+@import url('css/tokens.css');
+@import url('css/base.css');
+@import url('css/icons.css');
+@import url('css/topbar.css');
+@import url('css/sidebar.css');
+@import url('css/canvas.css');
+@import url('css/tabs.css');
+@import url('css/popup.css');
+@import url('css/modal.css');

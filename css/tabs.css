@@ -1,0 +1,21 @@
+/* Bottom tree-switcher tabs. */
+
+#tabs {
+  display: flex; justify-content: center; gap: 6px;
+  background: linear-gradient(0deg, var(--bg-2) 0%, var(--bg-1) 100%);
+  padding: 8px;
+  border-top: 1px solid var(--border);
+}
+#tabs button {
+  background: var(--bg-1); color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 10px 28px; border-radius: 10px 10px 4px 4px;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.15s;
+}
+#tabs button:hover { color: var(--text); background: var(--bg-2); }
+#tabs button.active { color: var(--accent); background: var(--bg-3); border-color: var(--accent); box-shadow: 0 0 12px rgba(255,216,74,0.25); }
+.tab-ico { display: inline-block; width: 18px; height: 18px; border-radius: 4px; }
+.tab-ico-adventure { background: linear-gradient(135deg, #ff8e3c, #ffd84a); }
+.tab-ico-spec      { background: linear-gradient(135deg, #c97cff, #5fb5ff); }

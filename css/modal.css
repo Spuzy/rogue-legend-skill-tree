@@ -1,0 +1,87 @@
+/* Themed confirmation modal — replaces native window.confirm(). */
+
+.app-modal {
+  position: fixed; inset: 0;
+  z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+}
+.app-modal.hidden { display: none; }
+.app-modal-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(10, 6, 26, 0.72);
+  backdrop-filter: blur(2px);
+}
+.app-modal-panel {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255,216,74,0.05);
+  padding: 18px 20px 14px;
+  min-width: 320px;
+  max-width: min(480px, calc(100vw - 32px));
+  max-height: calc(100vh - 64px);
+  display: flex; flex-direction: column; gap: 12px;
+  color: var(--text);
+}
+.app-modal-title {
+  font-size: 15px; font-weight: 700; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 0.6px;
+}
+.app-modal-body {
+  font-size: 13px; line-height: 1.45; color: var(--text);
+  overflow-y: auto;
+}
+.app-modal-msg { margin: 0 0 8px; }
+.app-modal-list {
+  list-style: none;
+  margin: 0; padding: 6px 8px;
+  background: var(--bg-0);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  max-height: 38vh; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.app-modal-list li {
+  font-size: 12px;
+  padding: 2px 4px;
+  color: var(--text-dim);
+}
+.app-modal-list li::before {
+  content: '\2022';
+  color: var(--accent);
+  margin-right: 6px;
+}
+.app-modal-actions {
+  display: flex; justify-content: flex-end; gap: 8px;
+  margin-top: 4px;
+}
+.app-modal-actions button {
+  background: var(--bg-3);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 12px; font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase; letter-spacing: 0.4px;
+}
+.app-modal-actions button:hover { background: var(--bg-2); }
+.app-modal-actions .app-modal-confirm {
+  background: var(--accent);
+  color: var(--bg-0);
+  border-color: var(--accent);
+}
+.app-modal-actions .app-modal-confirm:hover {
+  background: #ffe375;
+  border-color: #ffe375;
+}
+.app-modal-actions .app-modal-confirm.danger {
+  background: var(--warrior);
+  border-color: var(--warrior);
+  color: #fff;
+}
+.app-modal-actions .app-modal-confirm.danger:hover {
+  background: #ff7a7a;
+  border-color: #ff7a7a;
+}

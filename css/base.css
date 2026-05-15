@@ -1,0 +1,14 @@
+/* Base resets + page chrome. */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: radial-gradient(ellipse at top, #2e2370 0%, #15102a 70%);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+body { display: grid; grid-template-rows: auto 1fr auto; height: 100vh; }

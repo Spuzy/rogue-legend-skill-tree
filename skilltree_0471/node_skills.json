@@ -1,0 +1,929 @@
+{
+  "source_folder": "C:\\Users\\sebak\\Documents\\Rogue Legend Claude\\dumped\\skilltree_0471\\pictures",
+  "source_type": "manual screenshot extraction",
+  "rarity_mapping_inferred_from_frame_color": {
+    "grey_lilac": "common",
+    "orange_gold": "legendary",
+    "red_magenta": "mythic"
+  },
+  "groups": [
+    {
+      "node_id": "adventure_shuriken_enhancement_1",
+      "group_name": "Shuriken Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Ninja Dodge",
+          "rarity": "common",
+          "description": "Whenever you 'dodge', throw !2! 'Shurikens'",
+          "icon_sprite_name": "Shadow_Dodge",
+          "icon_file": "\\icons\\sharedassets0.assets__79274__1657.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Shuriken Throw Lv. 2",
+          "rarity": "common",
+          "description": "Every !2! rounds, throw !2! 'Shurikens'.",
+          "icon_sprite_name": "Shuriken",
+          "icon_file": "\\icons\\sharedassets0.assets__79275__2068.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Deadly Stars Lv. 2",
+          "rarity": "legendary",
+          "description": "'Shuriken DMG' !+125%!, but 'Shurikens' no longer trigger other effects.",
+          "icon_sprite_name": "Deadly_Stars",
+          "icon_file": "\\icons\\sharedassets0.assets__79273__1943.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Silver Shurikens",
+          "rarity": "legendary",
+          "description": "Whenever a 'Shuriken' is thrown, gain !3! 'Shop Tokens'",
+          "icon_sprite_name": "Silver_Shurikens",
+          "icon_file": "\\icons\\sharedassets0.assets__79276__1457.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_combo_enhancement_1",
+      "group_name": "Combo Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Enhanced Combo",
+          "rarity": "common",
+          "description": "Every 'Combo Attack' increases 'Crit Rate' by !+2%!, stacking up to !15! times.",
+          "icon_sprite_name": "Combo_Increase",
+          "icon_file": "\\icons\\sharedassets0.assets__79106__1517.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Combo Rate Up Lv. 2",
+          "rarity": "common",
+          "description": "'Combo Rate' !+15%!",
+          "icon_sprite_name": "Combo_Chance",
+          "icon_file": "\\icons\\sharedassets0.assets__79104__1716.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Combo Mastery Lv. 2",
+          "rarity": "legendary",
+          "description": "'Combo Rate' !+30%!, gain 'ATK' !+10%! on every 'Combo Attack', lasts until end of battle.",
+          "icon_sprite_name": "Combo_Mastery",
+          "icon_file": "\\icons\\sharedassets0.assets__79103__1550.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Follow-up Strike",
+          "rarity": "legendary",
+          "description": "Every !4! 'Basic Attacks' or 'Combo Attacks', deliver an additional 'Combo Attack' that is guaranteed to 'critically strike'.",
+          "icon_sprite_name": "Follow-up_Strike",
+          "icon_file": "\\icons\\sharedassets0.assets__79108__1603.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_status_enhancement_1",
+      "group_name": "Status Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "Upgrade Skill",
+          "name": "Slow And Steady Lv. 2",
+          "rarity": "common",
+          "description": "'Status Effects DMG' !+40%!",
+          "icon_sprite_name": "SlowButSteady",
+          "icon_file": "\\icons\\sharedassets0.assets__79291__1705.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Affliction Affection Lv. 2",
+          "rarity": "common",
+          "description": "Deal !4%! more damage for each unique 'Status Effect' on the enemy",
+          "icon_sprite_name": "affliction_affection",
+          "icon_file": "\\icons\\sharedassets0.assets__79290__2077.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_counter_enhancement_1",
+      "group_name": "Counter Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Enhanced Counter",
+          "rarity": "common",
+          "description": "Every 'Counter Attack' increases 'Damage Reduction' by !+2%!, stacking up to !15! times.",
+          "icon_sprite_name": "Counter_Attack_Increase",
+          "icon_file": "\\icons\\sharedassets0.assets__79118__1854.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Counter Rate Up Lv. 2",
+          "rarity": "common",
+          "description": "'Counter Rate' !+30%!",
+          "icon_sprite_name": "Counter_Attack_Chance",
+          "icon_file": "\\icons\\sharedassets0.assets__79116__1646.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Counter Mastery Lv. 2",
+          "rarity": "legendary",
+          "description": "'Counter Rate' !+45%!, gain 'DEF' !+10%! on every 'Counter Attack', lasts until end of battle.",
+          "icon_sprite_name": "Counter_Mastery",
+          "icon_file": "\\icons\\sharedassets0.assets__79115__1847.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Riposte",
+          "rarity": "legendary",
+          "description": "Every !4! turns, the next time you are attacked you will receive !-50%! less damage and then you deliver a 'Counter Attack' that deals 'double damage'.",
+          "icon_sprite_name": "Riposte",
+          "icon_file": "\\icons\\sharedassets0.assets__79121__2090.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_lightning_enhancement_1",
+      "group_name": "Lightning Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Combo Bolt",
+          "rarity": "common",
+          "description": "After every 'Combo Attack', cast 'Bolt'",
+          "icon_sprite_name": "Combo_Bolt",
+          "icon_file": "\\icons\\sharedassets0.assets__79222__1683.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Lightning Weapon Lv. 2",
+          "rarity": "common",
+          "description": "Your 'Weapon Attacks' deal additional 'lightning damage' and have a !75%! chance to cast 'Bolt'.",
+          "icon_sprite_name": "Lightning_Weapon",
+          "icon_file": "\\icons\\sharedassets0.assets__79225__1677.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Energizing Current Lv. 2",
+          "rarity": "legendary",
+          "description": "Every 'Bolt' grants you !4! 'Ultimate Charge'",
+          "icon_sprite_name": "EnergizingCurrent",
+          "icon_file": "\\icons\\sharedassets0.assets__79224__1820.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Overload",
+          "rarity": "legendary",
+          "description": "Every 'Bolt' increases your 'Combo Rate' by !+10%!, stacking up to !10! times, but every 'Combo Attack' removes !2! stacks.",
+          "icon_sprite_name": "Overload",
+          "icon_file": "\\icons\\sharedassets0.assets__79227__2139.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_ice_enhancement_1",
+      "group_name": "Ice Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Flash Frost",
+          "rarity": "common",
+          "description": "Every !2! turns, cast 'Icicle'. If you have a 'shield' active, cast 'Icicle' again.",
+          "icon_sprite_name": "Flash_Frost",
+          "icon_file": "\\icons\\sharedassets0.assets__79205__2113.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Ice Weapon Lv. 2",
+          "rarity": "common",
+          "description": "Your 'Weapon Attacks' deal additional 'ice damage' and have a !75%! chance to cast 'Icicle'.",
+          "icon_sprite_name": "Ice_Weapon",
+          "icon_file": "\\icons\\sharedassets0.assets__79208__1911.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Ice Spikes Lv. 2",
+          "rarity": "legendary",
+          "description": "When you are 'attacked' while having a 'Shield' up, 'counter-attack' with 'Icicle'.",
+          "icon_sprite_name": "Ice_Spikes",
+          "icon_file": "\\icons\\sharedassets0.assets__79207__1985.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Deadly Ice",
+          "rarity": "common",
+          "description": "Every time 'Icicle' critically strikes, cast 'Frost Strike'",
+          "icon_sprite_name": "Deadly_Ice",
+          "icon_file": "\\icons\\sharedassets0.assets__79204__1937.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_fire_enhancement_1",
+      "group_name": "Fire Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Ultimate Flame Strike",
+          "rarity": "common",
+          "description": "After using your 'Ultimate', cast !1! 'Flame Strike'",
+          "icon_sprite_name": "Ultimate_Flame_Strike",
+          "icon_file": "\\icons\\sharedassets0.assets__79165__1998.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Fire Weapon Lv. 2",
+          "rarity": "common",
+          "description": "Your 'Weapon Attacks' deal additional 'fire damage' and have a !60%! to cast 'Fireball'.",
+          "icon_sprite_name": "Fire_Weapon",
+          "icon_file": "\\icons\\sharedassets0.assets__79163__1681.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Flame Strike Lv. 2",
+          "rarity": "legendary",
+          "description": "After casting 'Fireball', you have a !70%! chance to cast 'Flame Strike'",
+          "icon_sprite_name": "Flame_Strike",
+          "icon_file": "\\icons\\sharedassets0.assets__79164__2016.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Blazing Frenzy",
+          "rarity": "legendary",
+          "description": "Everytime you apply a stack of 'Burn', gain !1! stack of 'Blazing Frenzy', increasing your 'Fire DMG' by !+5%!, stacking up to !20! times.",
+          "icon_sprite_name": "Blazing_Frenzy",
+          "icon_file": "\\icons\\sharedassets0.assets__79162__2091.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_dmgreduct_enhancement_1",
+      "group_name": "Damage Reduction Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Antidote",
+          "rarity": "common",
+          "description": "Damage taken from 'Damage over Time' effects is reduced by !50%!",
+          "icon_sprite_name": "Antidote",
+          "icon_file": "\\icons\\sharedassets0.assets__79137__1676.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Hardened Lv. 2",
+          "rarity": "common",
+          "description": "'DMG Reduction' !+15%!",
+          "icon_sprite_name": "Hardened",
+          "icon_file": "\\icons\\sharedassets0.assets__79141__1923.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Beefcake Lv. 2",
+          "rarity": "legendary",
+          "description": "'Max HP' !+55%!, 'ATK' !-30%!",
+          "icon_sprite_name": "Beefcake",
+          "icon_file": "\\icons\\sharedassets0.assets__79138__2002.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Gigantify",
+          "rarity": "legendary",
+          "description": "At the 'start of combat' and after every !4! turns, gain 'Gigantify', increasing your 'Max HP' and 'Current HP' by !+100%! for !1! turn",
+          "icon_sprite_name": "Gigantify",
+          "icon_file": "\\icons\\sharedassets0.assets__79140__1647.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_general_enhancement_3",
+      "group_name": "General Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Elemental Focus",
+          "rarity": "legendary",
+          "description": "Dealing 'Fire'/'Ice'/'Lightning' damage increases your damage dealt of that element type by !+15%!, stacking up to !5! times. Dealing damage with a different element resets all your stacks.",
+          "icon_sprite_name": "Elemental_Focus",
+          "icon_file": "\\icons\\sharedassets0.assets__79185__1932.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_pets_enhancement_1",
+      "group_name": "Pets Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Pet Trainer",
+          "rarity": "common",
+          "description": "You can ?no longer use Weapon Attacks?, but your 'Pets' attack delay are reduced by !1! and they deal !+50%! increased damage.",
+          "icon_sprite_name": "Pet_Trainer",
+          "icon_file": "\\icons\\sharedassets0.assets__79246__1592.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Better With Friends Lv. 2",
+          "rarity": "common",
+          "description": "'Pet DMG' !+40%!",
+          "icon_sprite_name": "BetterWithFriends",
+          "icon_file": "\\icons\\sharedassets0.assets__79244__1427.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_wound_enhancement_1",
+      "group_name": "Wound Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Deep Cuts",
+          "rarity": "common",
+          "description": "Whenever your 'Weapon Attack' critically strikes, apply !2! stacks of 'Wound'",
+          "icon_sprite_name": "Deep_Cuts",
+          "icon_file": "\\icons\\sharedassets0.assets__79303__2106.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Wound Strike Lv. 2",
+          "rarity": "common",
+          "description": "'Weapon Attacks' will apply !2! stacks of 'Wound'.",
+          "icon_sprite_name": "Wound_Strike",
+          "icon_file": "\\icons\\sharedassets0.assets__79307__1759.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Cleave Mastery Lv. 2",
+          "rarity": "legendary",
+          "description": "'Cleave DMG' !+130%!, but ?no longer? applies 'Wound'.",
+          "icon_sprite_name": "Cleave_Mastery",
+          "icon_file": "\\icons\\sharedassets0.assets__79302__2015.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Burning Rage",
+          "rarity": "mythic",
+          "description": "You can no longer gain 'Ultimate Charge', but all your 'Cleaves' are replaced with 'Steel Cyclone'",
+          "icon_sprite_name": "Burning_Rage",
+          "icon_file": "\\icons\\sharedassets0.assets__79301__1509.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_poison_enhancement_1",
+      "group_name": "Poison Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Toxic Retaliation",
+          "rarity": "common",
+          "description": "Whenever you 'take damage' or use a 'Counter Attack', apply !1! stack of 'Poison' on the enemy",
+          "icon_sprite_name": "Toxic_Retaliation",
+          "icon_file": "\\icons\\sharedassets0.assets__79251__1617.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Poison Strike Lv. 2",
+          "rarity": "common",
+          "description": "'Weapon Attacks' will apply !2! stacks of 'Poison'.",
+          "icon_sprite_name": "Poison_Strike",
+          "icon_file": "\\icons\\sharedassets0.assets__79250__1494.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Outbreak Lv. 2",
+          "rarity": "legendary",
+          "description": "At round !3!, apply 'Poison' !10! times on all enemies.",
+          "icon_sprite_name": "Outbreak",
+          "icon_file": "\\icons\\sharedassets0.assets__79249__1624.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Venom Burst",
+          "rarity": "legendary",
+          "description": "Every !20! times you apply 'Poison', use 'Venom Burst', dealing damage equal to !10%! 'Max HP' to all enemies.",
+          "icon_sprite_name": "Venom_Burst",
+          "icon_file": "\\icons\\sharedassets0.assets__79256__2134.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_heals_enhancement_1",
+      "group_name": "Healing Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Steady Growth",
+          "rarity": "common",
+          "description": "Every turn, your 'Current HP' and 'Max HP' increase by !+3%!, stacking infinitely.",
+          "icon_sprite_name": "Steady_Growth",
+          "icon_file": "\\icons\\sharedassets0.assets__79197__1873.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Recovery Lv. 2",
+          "rarity": "common",
+          "description": "You have a !50%! chance to restore '5% HP' every turn.",
+          "icon_sprite_name": "Recovery",
+          "icon_file": "\\icons\\sharedassets0.assets__79195__1894.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Lifesteal Lv. 2",
+          "rarity": "common",
+          "description": "'Weapon Attacks' have a !60%! chance to 'Lifesteal'",
+          "icon_sprite_name": "Lifesteal",
+          "icon_file": "\\icons\\sharedassets0.assets__79193__1855.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Feast",
+          "rarity": "legendary",
+          "description": "Whenever you defeat an enemy, your 'Max HP' is increased by !+2%! for the rest of the current run.",
+          "icon_sprite_name": "Feast",
+          "icon_file": "\\icons\\sharedassets0.assets__79192__1533.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_poison_enhancement_2",
+      "group_name": "Poison Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Corrosion",
+          "rarity": "common",
+          "description": "Deal !+1%! increased damage to enemies for each stack of 'Poison' on them",
+          "icon_sprite_name": "Corrosion",
+          "icon_file": "\\icons\\sharedassets0.assets__79258__1691.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Poison Cloud Lv. 2",
+          "rarity": "common",
+          "description": "At the end of your turn, apply !2! stacks of 'Poison' to all enemies.",
+          "icon_sprite_name": "Poison_Cloud",
+          "icon_file": "\\icons\\sharedassets0.assets__79259__1599.png"
+        },
+        {
+          "order": 3,
+          "type": "New Skill",
+          "name": "Serpent Stance",
+          "rarity": "mythic",
+          "description": "Dealing any form of non-poison damage will apply !1! stack of 'Poison' on the enemy",
+          "icon_sprite_name": "Serpent_Stance",
+          "icon_file": "\\icons\\sharedassets0.assets__79260__2162.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_enraged_enhancement_1",
+      "group_name": "Enraged Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Enraged Durability",
+          "rarity": "common",
+          "description": "When 'HP' !<40%!, 'DMG Reduction' !+30%!",
+          "icon_sprite_name": "Enraged Durability",
+          "icon_file": "\\icons\\sharedassets0.assets__79149__1480.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Enraged Strength Lv. 2",
+          "rarity": "common",
+          "description": "When !HP <40%!, 'ATK' !+50%! and 'DEF' !+50%!",
+          "icon_sprite_name": "Enraged_Strength",
+          "icon_file": "\\icons\\sharedassets0.assets__79151__1552.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Darkside Lv. 2",
+          "rarity": "legendary",
+          "description": "When !HP >50%!, 'ATK' !+75%! but drain ?10%? of your 'HP' every turn.",
+          "icon_sprite_name": "Darkside",
+          "icon_file": "\\icons\\sharedassets0.assets__79147__2042.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Purity",
+          "rarity": "legendary",
+          "description": "When 'HP' !<40%! for the first time, remove all damage over time and crowd control effects from yourself.",
+          "icon_sprite_name": "Purity",
+          "icon_file": "\\icons\\sharedassets0.assets__79152__2112.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_ice_enhancement_2",
+      "group_name": "Ice Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Frostbite",
+          "rarity": "legendary",
+          "description": "Your 'critical hit rate' is increased by !+5%! for each stack of 'Chill' on the enemy",
+          "icon_sprite_name": "Frostbite",
+          "icon_file": "\\icons\\sharedassets0.assets__79218__1957.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Fragile Cold Lv. 2",
+          "rarity": "common",
+          "description": "'Chill' increases damage you deal to the target by !8%! per stack.",
+          "icon_sprite_name": "Fragile_Cold",
+          "icon_file": "\\icons\\sharedassets0.assets__79216__1596.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Freezing Cold Lv. 2",
+          "rarity": "legendary",
+          "description": "When an enemy reaches max 'Chill' stacks, they become 'Frozen', and all 'Chill' stacks are consumed.",
+          "icon_sprite_name": "Freezing_Cold",
+          "icon_file": "\\icons\\sharedassets0.assets__79217__1536.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Evercold",
+          "rarity": "mythic",
+          "description": "At the end of your turn, and whenever you cast your 'Ultimate', and whenever 'Icicle' critically strikes, your 'Ice DMG' is increased by !+10%!, stacking up to !15! times.",
+          "icon_sprite_name": "Evercold",
+          "icon_file": "\\icons\\sharedassets0.assets__79215__2079.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_shields_enhancement_1",
+      "group_name": "Shields Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Panic Shield",
+          "rarity": "common",
+          "description": "After taking damage for the first time, gain a 'shield' equal to !25%! of your 'Missing HP'",
+          "icon_sprite_name": "Panic_Shield",
+          "icon_file": "\\icons\\sharedassets0.assets__79266__1429.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Strike Shield Lv. 2",
+          "rarity": "common",
+          "description": "'Weapon Attacks' have a !50%! to grant a 'Shield'",
+          "icon_sprite_name": "Shield_Strike",
+          "icon_file": "\\icons\\sharedassets0.assets__79269__1512.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Exoplating Lv. 2",
+          "rarity": "legendary",
+          "description": "At the start of combat, gain a 'Shield' equal to !70%! of your Max HP, but 'Max HP' !-40%!",
+          "icon_sprite_name": "Exoplating",
+          "icon_file": "\\icons\\sharedassets0.assets__79264__1491.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Shield Bash",
+          "rarity": "legendary",
+          "description": "At the end of your turn, if you have any amount of 'shield', use 'Shield Bash', dealing damage equal to the amount of 'shield' you have.",
+          "icon_sprite_name": "Shield_Bash",
+          "icon_file": "\\icons\\sharedassets0.assets__79268__1493.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_lightning_enhancement_2",
+      "group_name": "Lightning Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Electroparalysis",
+          "rarity": "common",
+          "description": "Dealing 'Lightning DMG' lowers enemy 'dodge rate', 'combo rate', and 'counter rate' by !-5%! for !2! turns, stacking up to !5! times.",
+          "icon_sprite_name": "Electroparalysis",
+          "icon_file": "\\icons\\sharedassets0.assets__79234__1613.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Live Wire Lv. 2",
+          "rarity": "common",
+          "description": "When attacked by an enemy, cast !1-2! 'Bolts'.",
+          "icon_sprite_name": "LiveWire",
+          "icon_file": "\\icons\\sharedassets0.assets__79237__1437.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "High Voltage Lv. 2",
+          "rarity": "legendary",
+          "description": "Each 'Bolt' increases your 'Lightning DMG' by !+12%! for !2! turns.",
+          "icon_sprite_name": "High_Voltage",
+          "icon_file": "\\icons\\sharedassets0.assets__79236__1958.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Static Discharge",
+          "rarity": "mythic",
+          "description": "Every !15! Bolts, cast 'Static Discharge', dealing 'Lightning DMG' to all enemies and 'stunning' them for !1! turn.",
+          "icon_sprite_name": "Static_Discharge",
+          "icon_file": "\\icons\\sharedassets0.assets__79239__1776.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_fire_enhancement_2",
+      "group_name": "Fire Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "A Warm Welcome",
+          "rarity": "common",
+          "description": "At the start of combat, cast 'Fire Wave' !3! times",
+          "icon_sprite_name": "A Warm Welcome_x3",
+          "icon_file": "\\icons\\sharedassets0.assets__79169__2086.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Pyromania Lv. 2",
+          "rarity": "common",
+          "description": "Deal !25%! more damage to 'burning' targets.",
+          "icon_sprite_name": "Pyromania",
+          "icon_file": "\\icons\\sharedassets0.assets__79176__1972.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Firestarter Lv. 2",
+          "rarity": "legendary",
+          "description": "After casting 'Fireball', you have a !75%! chance to cast 'Fire Wave' !2! times.",
+          "icon_sprite_name": "Firestarter",
+          "icon_file": "\\icons\\sharedassets0.assets__79175__1433.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Fire Lord",
+          "rarity": "mythic",
+          "description": "Dealing 'Fire DMG' restores a bit of 'HP', and heals twice as much when 'HP' !<40%!. 'Fire DMG'",
+          "icon_sprite_name": "Fire_Lord",
+          "icon_file": "\\icons\\sharedassets0.assets__79174__1981.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_crit_enhancement_1",
+      "group_name": "Crit Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Critical Energy",
+          "rarity": "legendary",
+          "description": "Everytime you land a 'critical hit', gain !+5! 'Ultimate Charge'.",
+          "icon_sprite_name": "Critical_Energy",
+          "icon_file": "\\icons\\sharedassets0.assets__79130__1418.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Critical Hit Rate Up Lv. 2",
+          "rarity": "common",
+          "description": "'Critical Hit Rate' !+15%!",
+          "icon_sprite_name": "Crit_Chance",
+          "icon_file": "\\icons\\sharedassets0.assets__79128__2100.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Glass Cannon Lv. 2",
+          "rarity": "legendary",
+          "description": "'ATK' !+55%!, 'Max HP' !-30%!",
+          "icon_sprite_name": "Glass_Cannon",
+          "icon_file": "\\icons\\sharedassets0.assets__79131__1537.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_wound_enhancement_2",
+      "group_name": "Wound Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Desperate Cleave",
+          "rarity": "common",
+          "description": "At the end of your turn, if you are below !<40%! 'HP', use 'Cleave'",
+          "icon_sprite_name": "Desperate_Cleave",
+          "icon_file": "\\icons\\sharedassets0.assets__79311__2089.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Opportunist Lv. 2",
+          "rarity": "common",
+          "description": "Deal !+25%! 'increased DMG' to enemies afflicted with 'Wound'.",
+          "icon_sprite_name": "Opportunist",
+          "icon_file": "\\icons\\sharedassets0.assets__79314__2026.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Licking Wounds Lv. 2",
+          "rarity": "legendary",
+          "description": "After defeating an enemy, restore !3%! of your 'HP'. Effectiveness increases for 'each stack' of 'Wound' the enemy had.",
+          "icon_sprite_name": "Licking_Wounds",
+          "icon_file": "\\icons\\sharedassets0.assets__79313__1556.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Adrenaline Rush",
+          "rarity": "legendary",
+          "description": "After applying 'Wound' !10! times, fully fill your 'Ultimate Bar'",
+          "icon_sprite_name": "Adrenaline_Rush",
+          "icon_file": "\\icons\\sharedassets0.assets__79310__1798.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_shuriken_enhancement_2",
+      "group_name": "Shuriken Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Critical Throw",
+          "rarity": "common",
+          "description": "Whenever your 'Weapon Attacks' critically strike, throw !1! 'Shuriken'",
+          "icon_sprite_name": "Critical_Throw",
+          "icon_file": "\\icons\\sharedassets0.assets__79280__1562.png"
+        },
+        {
+          "order": 2,
+          "type": "Upgrade Skill",
+          "name": "Energizing Shuriken Lv. 2",
+          "rarity": "common",
+          "description": "Every !2! rounds, throw !1! 'Shuriken'. All 'Shurikens' have a chance to grant !+8! 'Ultimate Charge'.",
+          "icon_sprite_name": "EnergizingShuriken",
+          "icon_file": "\\icons\\sharedassets0.assets__79282__1635.png"
+        },
+        {
+          "order": 3,
+          "type": "Upgrade Skill",
+          "name": "Fuma Shuriken Lv. 2",
+          "rarity": "legendary",
+          "description": "Every !3! 'Shurikens' thrown, throw a massive 'Fuma Shuriken'.",
+          "icon_sprite_name": "Fuma_Shuriken",
+          "icon_file": "\\icons\\sharedassets0.assets__79283__1763.png"
+        },
+        {
+          "order": 4,
+          "type": "New Skill",
+          "name": "Thousand Cuts",
+          "rarity": "mythic",
+          "description": "After dealing damage with a 'Shuriken', there is a !50%! chance to apply 'Thousand Cuts', dealing damage every turn equal to !2%!  of the enemy's Max HP for !2! turns.",
+          "icon_sprite_name": "Thousand_Cuts",
+          "icon_file": "\\icons\\sharedassets0.assets__79285__1622.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_general_enhancement_4",
+      "group_name": "General Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Skilled Fighter",
+          "rarity": "legendary",
+          "description": "'Skill DMG' !+80%!, 'Combo Rate' ?-60%?, 'Counter Rate' ?-60%?",
+          "icon_sprite_name": "Skilled_Fighter",
+          "icon_file": "\\icons\\sharedassets0.assets__79190__1824.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_general_enhancement_1",
+      "group_name": "General Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Weapon Mastery",
+          "rarity": "legendary",
+          "description": "Your 'Basic Attacks', 'Combo Attacks' and 'Counter Attacks' deal !+80%! more DMG",
+          "icon_sprite_name": "Weapon_Mastery",
+          "icon_file": "\\icons\\sharedassets0.assets__79181__1840.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_general_enhancement_2",
+      "group_name": "General Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Vampiric",
+          "rarity": "legendary",
+          "description": "'Lifesteal Rate' !+25%!, 'Lifesteal Effect' !+50%!, 'Magic DMG' ?-50%?",
+          "icon_sprite_name": "Vampiric",
+          "icon_file": "\\icons\\sharedassets0.assets__79183__1913.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_warrior_enhancement_1",
+      "group_name": "Warrior Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Warrior Lv. 2",
+          "rarity": "legendary",
+          "description": "'Physical DMG' !+30%!, 'Weapon Attack DMG' !+30%!, 'Magical DMG' ?-30%?",
+          "icon_sprite_name": "Warrior",
+          "icon_file": "\\icons\\sharedassets0.assets__79296__1636.png"
+        }
+      ]
+    },
+    {
+      "node_id": "adventure_wizard_enhancement_1",
+      "group_name": "Wizard Enhancement",
+      "skills": [
+        {
+          "order": 1,
+          "type": "New Skill",
+          "name": "Wizard Lv. 2",
+          "rarity": "legendary",
+          "description": "'Magical DMG' !+30%!, 'Skill DMG' !+30%!, 'Physical DMG' ?-30%?",
+          "icon_sprite_name": "Wizard",
+          "icon_file": "\\icons\\sharedassets0.assets__79299__1484.png"
+        }
+      ]
+    }
+  ]
+}

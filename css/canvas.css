@@ -1,0 +1,72 @@
+/* Stage (the SVG canvas) and node/edge appearance for both trees. */
+
+#stage {
+  position: relative;
+  overflow: hidden;
+}
+#canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  cursor: grab;
+}
+#canvas.panning { cursor: grabbing; }
+
+/* Edges between nodes. */
+.edge { stroke: #6857b0; stroke-width: 3; opacity: 0.7; }
+.edge.locked { stroke: #3a2f5a; opacity: 0.5; }
+
+/* Node base. */
+.node { cursor: pointer; }
+.node .shape { stroke: #2a1a55; stroke-width: 2; transition: filter 0.15s; }
+
+/* Theme background colors. */
+.node.theme-atk .shape       { fill: var(--atk); }
+.node.theme-def .shape       { fill: var(--def); }
+.node.theme-hp  .shape       { fill: var(--hp); }
+.node.theme-general .shape   { fill: var(--general); }
+.node.theme-warrior .shape   { fill: var(--warrior); }
+.node.theme-wizard .shape    { fill: var(--wizard); }
+.node.theme-fire .shape      { fill: #ff7a3a; }
+.node.theme-ice .shape       { fill: #7be5ff; }
+.node.theme-lightning .shape { fill: #ffe456; }
+.node.theme-poison .shape    { fill: #7adf6d; }
+.node.theme-crit .shape      { fill: #ff5e8a; }
+.node.theme-heals .shape     { fill: #a8ff9e; }
+.node.theme-shields .shape   { fill: #6db7ff; }
+.node.theme-dmgreduct .shape { fill: #7fffe6; }
+.node.theme-enraged .shape   { fill: #ff5050; }
+.node.theme-combo .shape     { fill: #ffb04a; }
+.node.theme-counter .shape   { fill: #6fe5c5; }
+.node.theme-shuriken .shape  { fill: #c8c8d8; }
+.node.theme-status .shape    { fill: #d56fff; }
+.node.theme-wound .shape     { fill: #d63a3a; }
+.node.theme-pet .shape       { fill: #d4a37a; }
+.node.theme-sentinel .shape  { fill: #b8b8c8; }
+.node.theme-pvp .shape       { fill: #ff8a5a; }
+.node.theme-mount .shape     { fill: #b08e6a; }
+.node.theme-spec .shape      { fill: #8a78c0; }
+
+/* States */
+.node.unowned .shape { filter: saturate(0.4) brightness(0.7); }
+.node.partial .shape { filter: saturate(1.0) brightness(1.0); }
+.node.maxed .shape   { stroke: var(--maxed); stroke-width: 3; filter: drop-shadow(0 0 8px var(--maxed)); }
+.node.locked .shape  { fill: var(--locked) !important; filter: grayscale(0.8) brightness(0.55); }
+.node.locked .node-icon { opacity: 0.35; }
+
+/* Halos: planning + budget-fit + search hits. */
+.node .halo { fill: none; stroke: transparent; stroke-width: 4; }
+.node.planned .halo { stroke: var(--plan); stroke-dasharray: 4 4; }
+.node.budget-fit .halo { stroke: var(--fit); stroke-width: 5; filter: drop-shadow(0 0 8px var(--fit)); }
+.node.search-match .halo { stroke: var(--search); stroke-width: 6; stroke-dasharray: 2 3; filter: drop-shadow(0 0 10px var(--search)); }
+.node.search-match.budget-fit .halo { stroke: var(--search); }
+
+.node:hover .shape { filter: brightness(1.25); }
+.node.maxed:hover .shape { filter: drop-shadow(0 0 14px var(--maxed)); }
+
+.node .badge-bg { fill: #0c0820; stroke: var(--border); stroke-width: 1; }
+.node.maxed .badge-bg { fill: var(--maxed); }
+.node .badge-text { fill: var(--text); font-size: 11px; font-weight: 700; }
+.node.maxed .badge-text { fill: #2a1a00; }
+
+.node .lock-icon { display: none; }
+.node-icon { pointer-events: none; }

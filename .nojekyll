@@ -1,0 +1,2 @@
+# Tells GitHub Pages to publish all files as-is (no Jekyll preprocessing).
+# Without this, files/folders starting with an underscore would be skipped.

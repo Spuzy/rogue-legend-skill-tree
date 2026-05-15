@@ -1,0 +1,108 @@
+/* Topbar — header brand, inline cards (Cost / Filter), action buttons,
+ * search bar. The main horizontal bar at the top of the page.
+ */
+
+#topbar {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  padding: 8px 14px;
+  background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg-1) 100%);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.topbar-spacer { flex: 1; min-width: 0; }
+.brand { display: flex; flex-direction: column; justify-content: center; padding-right: 6px; }
+.brand .tree-label {
+  font-size: 20px; font-weight: 700; color: var(--accent);
+  text-shadow: 0 0 12px rgba(255, 216, 74, 0.4);
+  line-height: 1.1;
+}
+.brand .subtitle { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+
+/* Inline topbar cards (Cost prediction, Budget filter) */
+.topbar-card {
+  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 10px 6px;
+  display: flex; flex-direction: column; gap: 3px;
+  min-width: 0;
+}
+.topbar-card-title {
+  font-size: 9px; font-weight: 700; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.7px;
+}
+.topbar-stats { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.tb-stat { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; }
+.tb-stat b { font-weight: 700; color: var(--text); font-size: 13px; }
+.tb-stat em { font-style: normal; font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.4px; }
+.topbar-filter { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.topbar-filter label { display: flex; align-items: center; gap: 4px; font-size: 12px; margin: 0; }
+.topbar-filter .tb-num input {
+  width: 76px; padding: 2px 5px;
+  background: var(--bg-0); border: 1px solid var(--border);
+  color: var(--text); border-radius: 4px; font-size: 12px;
+}
+.topbar-filter .toggle { cursor: pointer; user-select: none; }
+.topbar-filter .toggle input { margin: 0 3px 0 0; }
+
+/* Action cluster on the right (Reset / Set Planned / Set Filtered) */
+.topbar-actions { display: flex; align-items: center; gap: 8px; }
+#reset-btn {
+  background: #5a2030; color: #ffb0b8; border: 1px solid #8a3040;
+  padding: 8px 16px; border-radius: 8px; font-weight: 600;
+  cursor: pointer; font-size: 13px;
+}
+#reset-btn:hover { background: #7a2840; }
+#set-planned-btn,
+#set-filtered-btn {
+  background: var(--bg-3);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+#set-planned-btn:hover,
+#set-filtered-btn:hover { background: var(--bg-2); border-color: var(--accent); color: var(--accent); }
+#set-filtered-btn { border-color: var(--plan); color: #ff9be8; }
+#set-filtered-btn:hover { border-color: var(--plan); color: var(--plan); }
+
+/* Search bar (cyan outline matches the in-canvas node halo). */
+.topbar-search {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--bg-1);
+  border: 2px solid var(--search);
+  border-radius: 8px;
+  padding: 4px 8px;
+  box-shadow: 0 0 0 1px rgba(41, 214, 255, 0.18), 0 0 8px rgba(41, 214, 255, 0.18);
+}
+.topbar-search .ico-search {
+  color: var(--search); font-weight: 700; font-size: 16px; line-height: 1;
+  width: auto; height: auto;
+}
+.topbar-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 160px;
+  padding: 4px 2px;
+}
+.topbar-search input::placeholder { color: var(--text-dim); }
+.topbar-search #search-clear {
+  background: transparent;
+  border: none;
+  color: var(--search);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0 4px;
+}
+.topbar-search #search-clear:hover { color: #fff; }
