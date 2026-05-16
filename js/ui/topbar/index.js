@@ -2,13 +2,14 @@
 // budget filter, and cross-tree totals (ATK/DEF/HP %, total books spent).
 
 import { TREES } from '../../core/data.js';
-import { state, getCurrent, getPlanned, setCurrent, setPlanned, setFilter, setActiveTree, resetTree, setSearch } from '../../core/state.js';
+import { state, getCurrent, getPlanned, setCurrent, setPlanned, setFilter, setActiveTree, resetTree, removePlannedTree, setSearch, getProfiles, createProfile, loadSharedStateInto, PROFILES_MAX } from '../../core/state.js';
 import { rangeCost, formatNumber, formatMinutes, maxAffordableLevel } from '../../core/cost.js';
 import { computeTotals } from '../../core/stats.js';
-import { confirmModal, infoModal, promptModal, copyableModal } from '../modal.js';
-import { encode, applyCode } from '../../core/share.js';
+import { confirmModal, infoModal, promptModal, copyableModal, chooseModal } from '../modal.js';
+import { encode, applyCode, decode } from '../../core/share.js';
 import { isLocked } from '../../core/graph.js';
 import { renderTotalsDetail } from './totalsDetail.js';
+import { initProfilePicker, renderProfilePicker } from './profiles.js';
 
 let elements;
 let totalsCollapsed = false;
@@ -78,25 +79,24 @@ export function initTopbar(opts) {
   });
 
   if (elements.setPlannedBtn) {
-    elements.setPlannedBtn.addEventListener('click', async () => {
+    elements.setPlannedBtn.addEventListener('click', () => {
+      // Per user request, no confirmation: promote every planned level to
+      // current in the active tree immediately.
       const treeId = state.activeTree;
       const tree = TREES[treeId];
-      const promotions = [];
       for (const node of tree.nodes.values()) {
         const cur = getCurrent(node.nodeId);
         const planned = getPlanned(node.nodeId);
-        if (planned > cur) promotions.push({ node, from: cur, to: planned });
+        if (planned > cur) setCurrent(node, planned);
       }
-      if (promotions.length === 0) return;
-      const ok = await confirmModal({
-        title: `Set planned in ${tree.label}`,
-        message: `Promote every planned level to current in the ${tree.label} tree (${promotions.length} node${promotions.length === 1 ? '' : 's'}):`,
-        items: promotions.map(p => `${p.node.displayName}  (Lv.${p.from} \u2192 ${p.to})`),
-        confirmText: 'Set planned',
-        cancelText: 'Cancel',
-      });
-      if (!ok) return;
-      for (const p of promotions) setCurrent(p.node, p.to);
+    });
+  }
+
+  if (elements.removePlannedBtn) {
+    elements.removePlannedBtn.addEventListener('click', () => {
+      // No confirmation — clears every planned level in the active tree.
+      // Current owned levels are kept untouched.
+      removePlannedTree(state.activeTree);
     });
   }
 
@@ -201,21 +201,61 @@ export function initTopbar(opts) {
     elements.loadBtn.addEventListener('click', async () => {
       const code = await promptModal({
         title: 'Load build',
-        message: 'Paste a share code to load a saved build. This will replace your current levels and plans across both trees.',
+        message: 'Paste a share code to load a saved build.',
         placeholder: 'Paste share code here…',
-        confirmText: 'Load',
+        confirmText: 'Continue',
         cancelText: 'Cancel',
       });
       if (!code) return;
-      const ok = applyCode(code);
-      if (!ok) {
+      const decoded = decode(code.trim());
+      if (!decoded) {
         await confirmModal({
           title: 'Invalid code',
           message: 'The share code could not be parsed. Make sure you copied the full code.',
           confirmText: 'OK',
           cancelText: 'OK',
         });
+        return;
       }
+      const atCap = getProfiles().length >= PROFILES_MAX;
+      const choice = await chooseModal({
+        title: 'Load build',
+        message: 'Where should this build be loaded?',
+        choices: [
+          { label: 'Replace current profile', value: 'replace', tone: 'danger' },
+          {
+            label: atCap ? 'Load into new (cap reached)' : 'Load into new profile',
+            value: 'new',
+            disabled: atCap,
+            title: atCap ? `Profile cap of ${PROFILES_MAX} reached — delete one first` : '',
+          },
+        ],
+        cancelText: 'Cancel',
+      });
+      if (choice === 'replace') {
+        applyCode(code.trim());
+      } else if (choice === 'new') {
+        const idx = createProfile();
+        if (idx == null) return;
+        loadSharedStateInto(idx, decoded.current, decoded.planned);
+        // Switch to the new profile so the user sees what they just loaded.
+        const { switchProfile } = await import('../../core/state.js');
+        switchProfile(idx);
+        if (elements.onProfileSwitch) elements.onProfileSwitch();
+      }
+    });
+  }
+
+  // Profile picker (rename / dropdown / delete trio).
+  if (elements.profilePicker) {
+    initProfilePicker({
+      picker:     elements.profilePicker,
+      rename:     elements.profileRenameBtn,
+      toggle:     elements.profileToggleBtn,
+      menu:       elements.profileMenu,
+      activeName: elements.profileActiveName,
+      del:        elements.profileDeleteBtn,
+      onSwitch:   elements.onProfileSwitch,
     });
   }
 }
@@ -277,6 +317,7 @@ export function renderTopbar() {
   if (elements.totalSpecSpent) elements.totalSpecSpent.textContent = formatNumber(totals.specSpent);
 
   renderTotalsDetail(elements.totalsDetail);
+  renderProfilePicker();
 }
 
 // Help / how-to dialog opened from the round info button next to the search.

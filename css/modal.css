@@ -172,6 +172,39 @@
 .app-modal-help .swatch-plan    { color: var(--plan); font-weight: 700; }
 .app-modal-help .swatch-search  { color: var(--search); font-weight: 700; }
 
+/* Multi-choice modal — inline button row inside the body. */
+.app-modal-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.app-modal-choice {
+  background: var(--bg-3);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  flex: 1 1 auto;
+}
+.app-modal-choice:hover:not(:disabled) { background: var(--bg-2); border-color: var(--accent); color: var(--accent); }
+.app-modal-choice:disabled { opacity: 0.4; cursor: not-allowed; }
+.app-modal-choice.danger {
+  background: #5a2030;
+  color: #ffb0b8;
+  border-color: #8a3040;
+}
+.app-modal-choice.danger:hover:not(:disabled) {
+  background: #7a2840;
+  border-color: #aa4055;
+  color: #fff;
+}
+
 /* ── Mobile modal ── */
 @media (max-width: 600px) {
   .app-modal-panel { min-width: 0; max-width: calc(100vw - 24px); padding: 10px 12px 8px; gap: 8px; }

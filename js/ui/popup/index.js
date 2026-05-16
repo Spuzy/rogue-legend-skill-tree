@@ -13,6 +13,29 @@ let currentNode = null;
 
 export function getPopupNode() { return currentNode; }
 
+// Mirrors the Set button: if the node is locked, prompt the user before also
+// setting every missing prerequisite to level 1. Used by the popup buttons and
+// by the global 0-9 keyboard shortcut so both paths behave identically.
+export async function setNodeLevelWithPrereqs(node, lvl) {
+  lvl = Math.max(0, Math.min(node.maxLevel, lvl));
+  const missing = collectPrereqChain(node, pid => getCurrent(pid) < 1);
+  if (missing.length === 0) {
+    setCurrent(node, lvl);
+    return true;
+  }
+  const ok = await confirmModal({
+    title: `Unlock "${node.displayName}"`,
+    message: `Setting this node to level ${lvl} will also set the following ${missing.length} prerequisite node${missing.length === 1 ? '' : 's'} to level 1:`,
+    items: missing.map(n => n.displayName),
+    confirmText: `Set to level ${lvl}`,
+    cancelText: 'Cancel',
+  });
+  if (!ok) return false;
+  for (const anc of missing) setCurrent(anc, 1);
+  setCurrent(node, lvl);
+  return true;
+}
+
 export function initPopup(hostEl) {
   host = hostEl;
   host.classList.add('popup');
@@ -187,22 +210,7 @@ function renderPopup() {
     btn.addEventListener('click', async () => {
       const lvl = Number(btn.dataset.lvl);
       if (btn.dataset.act === 'set') {
-        // Set requires every ancestor's CURRENT level >= 1.
-        const missing = collectPrereqChain(node, pid => getCurrent(pid) < 1);
-        if (missing.length === 0) {
-          setCurrent(node, lvl);
-          return;
-        }
-        const ok = await confirmModal({
-          title: `Unlock "${node.displayName}"`,
-          message: `Setting this node to level ${lvl} will also set the following ${missing.length} prerequisite node${missing.length === 1 ? '' : 's'} to level 1:`,
-          items: missing.map(n => n.displayName),
-          confirmText: `Set to level ${lvl}`,
-          cancelText: 'Cancel',
-        });
-        if (!ok) return;
-        for (const anc of missing) setCurrent(anc, 1);
-        setCurrent(node, lvl);
+        await setNodeLevelWithPrereqs(node, lvl);
       } else {
         // Plan requires every ancestor's PLANNED level >= 1 (set counts).
         // Only ancestors that are neither set nor planned need a bump.

@@ -5,8 +5,9 @@
   background: linear-gradient(0deg, var(--bg-2) 0%, var(--bg-1) 100%);
   padding: 8px;
   border-top: 1px solid var(--border);
+  position: relative;
 }
-#tabs button {
+#tabs button[data-tree] {
   background: var(--bg-1); color: var(--text-dim);
   border: 1px solid var(--border);
   padding: 10px 28px; border-radius: 10px 10px 4px 4px;
@@ -14,15 +15,64 @@
   display: inline-flex; align-items: center; gap: 8px;
   transition: all 0.15s;
 }
-#tabs button:hover { color: var(--text); background: var(--bg-2); }
-#tabs button.active { color: var(--accent); background: var(--bg-3); border-color: var(--accent); box-shadow: 0 0 12px rgba(255,216,74,0.25); }
+#tabs button[data-tree]:hover { color: var(--text); background: var(--bg-2); }
+#tabs button[data-tree].active { color: var(--accent); background: var(--bg-3); border-color: var(--accent); box-shadow: 0 0 12px rgba(255,216,74,0.25); }
 .tab-ico { display: inline-block; width: 18px; height: 18px; border-radius: 4px; }
 .tab-ico-adventure { background: linear-gradient(135deg, #ff8e3c, #ffd84a); }
 .tab-ico-spec      { background: linear-gradient(135deg, #c97cff, #5fb5ff); }
 
+/* Right-aligned action cluster: Set Planned (green) / Remove Planned (blue) /
+ * Reset (red). Absolutely positioned so the tab buttons stay centered. */
+.tab-actions {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tab-actions .tab-action-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg-3);
+  color: var(--text);
+}
+.tab-action-set {
+  background: #1f5a2b;
+  color: #c8f5cf;
+  border-color: #2e7a3f;
+}
+.tab-action-set:hover { background: #2a7a3a; color: #fff; border-color: #3ea052; }
+
+.tab-action-remove { /* keep default blue/purple bg from tab-action-btn */ }
+.tab-action-remove:hover { background: var(--bg-2); border-color: var(--accent); color: var(--accent); }
+
+.tab-action-reset {
+  background: #5a2030;
+  color: #ffb0b8;
+  border-color: #8a3040;
+}
+.tab-action-reset:hover { background: #7a2840; color: #fff; border-color: #aa4055; }
+
 /* ── Mobile tabs ── */
 @media (max-width: 600px) {
   #tabs { padding: 4px; gap: 3px; }
-  #tabs button { flex: 1; padding: 6px 8px; min-height: 32px; font-size: 11px; justify-content: center; }
+  #tabs button[data-tree] { flex: 1; padding: 6px 8px; min-height: 32px; font-size: 11px; justify-content: center; }
   .tab-ico { width: 14px; height: 14px; }
+  /* On mobile, drop the absolute positioning and let the actions wrap below
+   * the tab buttons instead of overflowing the bar. */
+  .tab-actions {
+    position: static;
+    transform: none;
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+    flex-wrap: wrap;
+  }
+  .tab-actions .tab-action-btn { padding: 6px 10px; font-size: 11px; }
 }

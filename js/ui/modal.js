@@ -44,6 +44,12 @@ function close(result) {
   if (r) r(result);
 }
 
+// Whether any modal dialog is currently visible. Used by global keyboard
+// handlers to suppress shortcuts while a modal is awaiting input.
+export function isModalOpen() {
+  return !!host && !host.classList.contains('hidden');
+}
+
 export function confirmModal(opts = {}) {
   const h = ensureHost();
   const title  = opts.title || 'Confirm';
@@ -225,3 +231,78 @@ export function infoModal(opts = {}) {
     };
   });
 }
+
+// Multi-choice modal. Renders an arbitrary set of action buttons plus a
+// Cancel button. Resolves with the clicked choice's `value`, or null if the
+// modal was cancelled or dismissed via Escape / backdrop click.
+//
+//   const choice = await chooseModal({
+//     title: 'Load',
+//     message: '...',
+//     choices: [
+//       { label: 'Replace current', value: 'replace' },
+//       { label: 'Load into new',   value: 'new', disabled: true },
+//     ],
+//     cancelText: 'Cancel',
+//   });
+export function chooseModal(opts = {}) {
+  const h = ensureHost();
+  const title = opts.title || 'Choose';
+  const message = opts.message || '';
+  const choices = Array.isArray(opts.choices) ? opts.choices : [];
+  const cancelText = opts.cancelText || 'Cancel';
+
+  h.querySelector('.app-modal-title').textContent = title;
+  const body = h.querySelector('.app-modal-body');
+  body.innerHTML = '';
+  if (message) {
+    const p = document.createElement('p');
+    p.className = 'app-modal-msg';
+    p.textContent = message;
+    body.appendChild(p);
+  }
+
+  // Hide the default confirm button — we render our own row inline.
+  const cancelBtn  = h.querySelector('.app-modal-cancel');
+  const confirmBtn = h.querySelector('.app-modal-confirm');
+  cancelBtn.textContent = cancelText;
+  cancelBtn.hidden = false;
+  confirmBtn.hidden = true;
+
+  const row = document.createElement('div');
+  row.className = 'app-modal-choices';
+  const choiceButtons = [];
+  for (const c of choices) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'app-modal-choice' + (c.tone ? ' ' + c.tone : '');
+    btn.textContent = c.label;
+    if (c.disabled) btn.disabled = true;
+    if (c.title) btn.title = c.title;
+    btn.addEventListener('click', () => {
+      // Restore the default modal layout for the next caller.
+      confirmBtn.hidden = false;
+      close(c.value);
+    });
+    row.appendChild(btn);
+    choiceButtons.push(btn);
+  }
+  body.appendChild(row);
+
+  h.classList.remove('hidden');
+  setTimeout(() => {
+    const first = choiceButtons.find(b => !b.disabled);
+    if (first) first.focus();
+  }, 0);
+
+  if (activeReject) { const r = activeReject; activeReject = null; r(null); }
+
+  return new Promise((resolve) => {
+    activeReject = (v) => {
+      confirmBtn.hidden = false;
+      // Cancel / Esc / backdrop yield `false` from the binary close(); map to null.
+      resolve(v === false ? null : v);
+    };
+  });
+}
+

@@ -1,11 +1,12 @@
 // Bootstrap.
 
-import { subscribe, state, setCurrent } from './core/state.js';
+import { subscribe, state } from './core/state.js';
 import { initRender, render, centerTree } from './render/index.js';
-import { initPopup, refreshPopup, closePopup, getPopupNode } from './ui/popup/index.js';
+import { initPopup, refreshPopup, closePopup, getPopupNode, setNodeLevelWithPrereqs } from './ui/popup/index.js';
 import { initTopbar, renderTopbar } from './ui/topbar/index.js';
 import { loadSkillMeta, getNodeMeta } from './core/skill_meta.js';
 import { enrichTreesWithMeta } from './core/data.js';
+import { isModalOpen } from './ui/modal.js';
 import { $ } from './ui/dom.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
@@ -55,8 +56,16 @@ window.addEventListener('DOMContentLoaded', async () => {
     advancedToggle: $('totals-advanced-toggle'),
     resetBtn:      $('reset-btn'),
     setPlannedBtn: $('set-planned-btn'),
+    removePlannedBtn: $('remove-planned-btn'),
     saveBtn:       $('save-btn'),
     loadBtn:       $('load-btn'),
+    profilePicker:     $('profile-picker'),
+    profileRenameBtn:  $('profile-rename-btn'),
+    profileToggleBtn:  $('profile-toggle-btn'),
+    profileMenu:       $('profile-menu'),
+    profileActiveName: $('profile-active-name'),
+    profileDeleteBtn:  $('profile-delete-btn'),
+    onProfileSwitch:   () => closePopup(),
     setFilteredBtn:$('set-filtered-btn'),
     planFilteredBtn:$('plan-filtered-btn'),
     searchInput:   $('search-input'),
@@ -75,15 +84,20 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
   };
   // Keyboard shortcuts: 1-9 and 0 set the open node's level (0 = level 10).
+  // Mirrors the Set button — locked nodes prompt to also set prerequisites.
+  // Suppressed while typing in any input/textarea/contenteditable, or while
+  // a modal is open.
   window.addEventListener('keydown', e => {
-    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
     if (e.ctrlKey || e.altKey || e.metaKey) return;
+    const t = e.target;
+    if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+    if (isModalOpen()) return;
     const node = getPopupNode();
     if (!node) return;
     const key = e.key;
     if (key >= '0' && key <= '9') {
       const lvl = key === '0' ? 10 : Number(key);
-      setCurrent(node, Math.min(lvl, node.maxLevel));
+      setNodeLevelWithPrereqs(node, Math.min(lvl, node.maxLevel));
     }
   });
 

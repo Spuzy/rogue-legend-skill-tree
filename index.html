@@ -46,10 +46,19 @@
     </div>
     <button id="help-btn" class="help-btn" type="button" title="How to use the simulator" aria-label="Help">i</button>
     <div class="topbar-actions">
-      <button id="save-btn" title="Generate a share code for your current build">Save</button>
+      <div id="profile-picker" class="profile-picker">
+        <button id="profile-rename-btn" class="profile-icon-btn" type="button" title="Rename the active profile" aria-label="Rename profile">✎</button>
+        <div class="profile-dropdown">
+          <button id="profile-toggle-btn" class="profile-toggle" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span id="profile-active-name" class="profile-active-name">Profile 1</span>
+            <span class="profile-caret">▾</span>
+          </button>
+          <ul id="profile-menu" class="profile-menu" role="listbox" hidden></ul>
+        </div>
+        <button id="profile-delete-btn" class="profile-icon-btn profile-delete-btn" type="button" title="Delete the active profile" aria-label="Delete profile">✕</button>
+      </div>
       <button id="load-btn" title="Load a build from a share code">Load</button>
-      <button id="set-planned-btn" title="Promote every planned level in the active tree to current">Set Planned</button>
-      <button id="reset-btn" class="danger" title="Clear all current levels and plans in the active tree (filter is preserved)">Reset</button>
+      <button id="save-btn" title="Generate a share code for your current build">Share</button>
     </div>
   </header>
 
@@ -91,6 +100,11 @@
       <span class="tab-ico tab-ico-spec"></span>
       Specialization
     </button>
+    <div class="tab-actions">
+      <button id="set-planned-btn" class="tab-action-btn tab-action-set" title="Promote every planned level in the active tree to current">Set Planned</button>
+      <button id="remove-planned-btn" class="tab-action-btn tab-action-remove" title="Clear every planned level in the active tree (current owned levels are kept)">Remove Planned</button>
+      <button id="reset-btn" class="tab-action-btn tab-action-reset" title="Clear all current levels and plans in the active tree (filter is preserved)">Reset</button>
+    </div>
   </nav>
 
   <div id="boot-error" style="display:none;position:fixed;top:60px;left:50%;transform:translateX(-50%);background:#5a2030;color:#ffe;padding:14px 22px;border:1px solid #8a3040;border-radius:8px;z-index:1000;max-width:680px;font-family:Segoe UI,sans-serif;line-height:1.45"></div>
@@ -125,7 +139,7 @@
       }, 3000);
     });
   </script>
-  <script type="module" src="js/main.js?v=2"></script>
+  <script type="module" src="js/main.js?v=3"></script>
   <script data-goatcounter="https://spuzy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
